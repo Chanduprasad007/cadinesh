@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J Dinesh &amp; Co | Chartered Accountants | Bengaluru</title>
+<meta name="description" content="J Dinesh &amp; Co – Trusted Chartered Accountants in Bengaluru. Expert taxation, GST, audit, and compliance services for individuals, businesses, and corporates across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --navy:#0C1C35;--navy-mid:#162944;--gold:#B8922C;--gold-light:#D4A94A;
+    --cream:#F7F4EE;--cream-dark:#EDE9DF;--text:#1A1A1A;--text-muted:#5A5A5A;
+    --white:#FFFFFF;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'DM Sans',system-ui,sans-serif;
+    --max:1140px;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--white);color:var(--text);font-size:16px;line-height:1.7}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,28,53,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(184,146,44,0.25)}
+  .nav-inner{max-width:var(--max);margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo-area{display:flex;flex-direction:column;line-height:1.2}
+  .logo-name{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--white);letter-spacing:0.04em}
+  .logo-tagline{font-size:0.65rem;font-weight:300;color:var(--gold-light);letter-spacing:0.18em;text-transform:uppercase}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.82rem;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+  .nav-links a:hover{color:var(--gold-light)}
+  .nav-cta{background:var(--gold);color:var(--white)!important;padding:0.45rem 1.2rem;border-radius:2px;font-size:0.78rem!important;letter-spacing:0.1em!important;transition:background 0.2s!important}
+  .nav-cta:hover{background:var(--gold-light)!important;color:var(--navy)!important}
+
+  #home{min-height:100vh;background:var(--navy);display:flex;align-items:center;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 70% 50%,rgba(184,146,44,0.08) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(184,146,44,0.05) 0%,transparent 60%)}
+  .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(184,146,44,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(184,146,44,0.06) 1px,transparent 1px);background-size:60px 60px}
+  .hero-inner{max-width:var(--max);margin:0 auto;padding:8rem 2rem 4rem;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(184,146,44,0.4);padding:0.3rem 0.9rem;border-radius:2px;font-size:0.72rem;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.5rem}
+  .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  h1{font-family:var(--serif);font-size:clamp(2.6rem,5vw,3.8rem);font-weight:500;color:var(--white);line-height:1.15;margin-bottom:1.2rem}
+  h1 em{font-style:italic;color:var(--gold-light)}
+  .hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.65);font-weight:300;max-width:44ch;margin-bottom:2.5rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+  .btn-primary{background:var(--gold);color:var(--white);padding:0.75rem 2rem;border-radius:2px;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-decoration:none;text-transform:uppercase;transition:background 0.2s,transform 0.15s;display:inline-block}
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+  .btn-outline{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.85);padding:0.75rem 2rem;border-radius:2px;font-size:0.85rem;font-weight:400;letter-spacing:0.06em;text-decoration:none;text-transform:uppercase;transition:border-color 0.2s,color 0.2s;display:inline-block}
+  .btn-outline:hover{border-color:var(--gold-light);color:var(--gold-light)}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.1)}
+  .stat-num{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--gold-light);line-height:1}
+  .stat-label{font-size:0.75rem;color:rgba(255,255,255,0.5);font-weight:300;letter-spacing:0.05em;margin-top:0.3rem}
+  .hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(184,146,44,0.2);border-radius:4px;padding:2.5rem}
+  .ca-photo-wrap{width:90px;height:90px;border-radius:50%;overflow:hidden;border:2px solid rgba(184,146,44,0.5);margin-bottom:1.5rem;background:var(--navy-mid)}
+  .ca-photo{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(1.05) contrast(1.05) saturate(0.9)}
+  .card-name{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--white);margin-bottom:0.2rem}
+  .card-title{font-size:0.78rem;color:var(--gold-light);letter-spacing:0.12em;text-transform:uppercase;font-weight:400;margin-bottom:1.5rem}
+  .card-info-row{display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-top:1px solid rgba(255,255,255,0.07)}
+  .card-icon{width:16px;flex-shrink:0;color:var(--gold);margin-top:2px}
+  .card-info-text{font-size:0.82rem;color:rgba(255,255,255,0.7);font-weight:300;line-height:1.5}
+  .card-info-text a{color:rgba(255,255,255,0.7);text-decoration:none;transition:color 0.2s}
+  .card-info-text a:hover{color:var(--gold-light)}
+
+  section{padding:5rem 2rem}
+  .section-inner{max-width:var(--max);margin:0 auto}
+  .section-tag{font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+  h2{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:500;color:var(--navy);line-height:1.2;margin-bottom:1.2rem}
+  h2 em{font-style:italic;color:var(--gold)}
+  .section-lead{font-size:1.05rem;color:var(--text-muted);max-width:56ch;font-weight:300;line-height:1.8}
+
+  #about{background:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+  .about-img-box{background:var(--navy);border-radius:4px;padding:3rem 2.5rem;position:relative;overflow:hidden}
+  .about-img-box::before{content:'';position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:rgba(184,146,44,0.12)}
+  .about-monogram{font-family:var(--serif);font-size:6rem;font-weight:600;color:rgba(184,146,44,0.15);line-height:1;margin-bottom:1rem;position:relative}
+  .about-quote{font-family:var(--serif);font-size:1.25rem;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:1.5rem;position:relative}
+  .about-quote::before{content:'"';font-size:4rem;color:var(--gold);line-height:0;vertical-align:-1.5rem;margin-right:0.2rem;font-family:var(--serif)}
+  .about-sig{font-size:0.78rem;color:var(--gold-light);letter-spacing:0.1em;text-transform:uppercase}
+  .about-accent{position:absolute;bottom:-16px;right:-16px;width:80px;height:80px;border:2px solid var(--gold);border-radius:2px;opacity:0.4}
+  .affiliation-row{display:flex;flex-direction:column;gap:0.75rem;margin-top:2rem}
+  .affiliation-pill{display:inline-flex;align-items:center;gap:0.6rem;background:var(--white);border:1px solid rgba(184,146,44,0.25);padding:0.5rem 1rem;border-radius:2px;font-size:0.82rem;font-weight:400;color:var(--navy);width:fit-content}
+  .affiliation-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+  .about-text p{color:var(--text-muted);font-weight:300;margin-bottom:1.2rem;font-size:0.97rem}
+
+  #services{background:var(--white)}
+  .services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:rgba(184,146,44,0.15);border:1.5px solid rgba(184,146,44,0.15);border-radius:4px;overflow:hidden}
+  .service-card{background:var(--white);padding:2rem 1.8rem;transition:background 0.25s;position:relative}
+  .service-card:hover{background:var(--cream)}
+  .service-icon{width:44px;height:44px;background:var(--navy);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+  .service-icon svg{width:20px;height:20px;fill:none;stroke:var(--gold);stroke-width:1.5}
+  .service-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--navy);margin-bottom:0.6rem}
+  .service-desc{font-size:0.83rem;color:var(--text-muted);line-height:1.7;font-weight:300}
+  .service-tag{display:inline-block;margin-top:1rem;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+  #why{background:var(--navy)}
+  #why h2{color:var(--white)}
+  #why .section-lead{color:rgba(255,255,255,0.6)}
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
+  .why-item{display:flex;gap:1.2rem;align-items:flex-start}
+  .why-num{font-family:var(--serif);font-size:2rem;font-weight:600;color:rgba(184,146,44,0.3);line-height:1;min-width:2.5rem}
+  .why-item-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--white);margin-bottom:0.4rem}
+  .why-item-desc{font-size:0.83rem;color:rgba(255,255,255,0.55);font-weight:300;line-height:1.7}
+
+  #contact{background:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
+  .contact-card{background:var(--navy);border-radius:4px;padding:2.5rem;color:var(--white)}
+  .contact-card h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;margin-bottom:0.3rem}
+  .contact-subtitle{font-size:0.75rem;color:var(--gold-light);letter-spacing:0.12em;text-transform:uppercase;font-weight:400;margin-bottom:2rem;display:block}
+  .contact-item{display:flex;gap:1rem;align-items:flex-start;padding:0.9rem 0;border-top:1px solid rgba(255,255,255,0.07)}
+  .contact-icon{width:36px;height:36px;background:rgba(184,146,44,0.15);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .contact-icon svg{width:16px;height:16px;fill:none;stroke:var(--gold);stroke-width:1.5}
+  .contact-item-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:400;margin-bottom:0.2rem}
+  .contact-item-value{font-size:0.85rem;color:rgba(255,255,255,0.85);font-weight:300;line-height:1.5}
+  .contact-item-value a{color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s}
+  .contact-item-value a:hover{color:var(--gold-light)}
+  .form-row{margin-bottom:1.25rem}
+  .form-label{display:block;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);font-weight:500;margin-bottom:0.5rem}
+  .form-input{width:100%;padding:0.75rem 1rem;border:1px solid rgba(184,146,44,0.25);border-radius:2px;font-family:var(--sans);font-size:0.9rem;font-weight:300;color:var(--text);background:var(--white);transition:border-color 0.2s;outline:none}
+  .form-input:focus{border-color:var(--gold)}
+  .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235A5A5A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
+  textarea.form-input{resize:vertical;min-height:110px}
+  .form-submit{background:var(--navy);color:var(--white);border:none;padding:0.85rem 2.5rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:background 0.2s,transform 0.15s;width:100%}
+  .form-submit:hover{background:var(--gold);transform:translateY(-1px)}
+  .form-note{font-size:0.75rem;color:var(--text-muted);margin-top:0.75rem;text-align:center;font-weight:300}
+
+  footer{background:#090F1D;padding:3rem 2rem 1.5rem}
+  .footer-inner{max-width:var(--max);margin:0 auto}
+  .footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,0.07);flex-wrap:wrap;gap:1.5rem}
+  .footer-logo-name{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--white)}
+  .footer-logo-sub{font-size:0.65rem;color:var(--gold-light);letter-spacing:0.16em;text-transform:uppercase;font-weight:300}
+  .footer-links{display:flex;gap:2rem;list-style:none}
+  .footer-links a{font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s}
+  .footer-links a:hover{color:var(--gold-light)}
+  .footer-bottom{padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.3);font-weight:300}
+  .footer-icai{font-size:0.72rem;color:rgba(184,146,44,0.6);font-weight:300;letter-spacing:0.06em}
+  .li-btn{display:flex;align-items:center;gap:0.6rem;background:rgba(10,102,194,0.15);border:1px solid rgba(10,102,194,0.3);color:#7ab3e0;padding:0.6rem 1rem;border-radius:2px;font-size:0.8rem;text-decoration:none;letter-spacing:0.06em;transition:background 0.2s;margin-top:1.5rem;width:fit-content}
+  .li-btn:hover{background:rgba(10,102,194,0.28)}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:2rem}
+    .about-grid{grid-template-columns:1fr;gap:3rem}
+    .services-grid{grid-template-columns:1fr 1fr}
+    .why-grid{grid-template-columns:1fr;gap:1.5rem}
+    .contact-grid{grid-template-columns:1fr;gap:3rem}
+    nav{display:none}
+  }
+  @media(max-width:600px){
+    .services-grid{grid-template-columns:1fr}
+    .form-row-2{grid-template-columns:1fr}
+    .hero-stats{grid-template-columns:1fr 1fr}
+  }
+  .mobile-nav{display:none;position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,28,53,0.97);padding:0 1.5rem;height:60px;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(184,146,44,0.2)}
+  @media(max-width:900px){
+    .mobile-nav{display:flex}
+    body{padding-top:60px}
+    #home{min-height:calc(100vh - 60px)}
+    .hero-inner{padding-top:3rem}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo-area">
+      <span class="logo-name">J Dinesh &amp; Co</span>
+      <span class="logo-tagline">Chartered Accountants</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:+919071059696" class="nav-cta">Call Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <div class="logo-area">
+    <span class="logo-name">J Dinesh &amp; Co</span>
+    <span class="logo-tagline" style="font-size:0.58rem;">Chartered Accountants</span>
+  </div>
+  <a href="tel:+919071059696" class="btn-primary" style="font-size:0.75rem;padding:0.45rem 1rem;">Call Now</a>
+</div>
+
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">Bengaluru, India &middot; Est. Practice</div>
+      <h1>Trusted <em>financial</em><br>counsel, built on<br>precision.</h1>
+      <p class="hero-sub">Expert taxation, audit, and compliance solutions for individuals, startups, and corporations across India — delivered with integrity and depth.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Book a Consultation</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">100%</div><div class="stat-label">Compliance Accuracy</div></div>
+        <div><div class="stat-num">All India</div><div class="stat-label">Tax Practice</div></div>
+        <div><div class="stat-num">Corp + Ind</div><div class="stat-label">Client Coverage</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-card">
+        <div class="ca-photo-wrap">
+          <img src="data:image/jpeg;base64,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" alt="CA Dinesh Jagarlamudi" class="ca-photo">
+        </div>
+        <div class="card-name">CA Dinesh Jagarlamudi</div>
+        <div class="card-title">ACA &middot; Founder, J Dinesh &amp; Co</div>
+        <div class="card-info-row">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div class="card-info-text"><a href="tel:+919071059696">+91 90710 59696</a></div>
+        </div>
+        <div class="card-info-row">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="card-info-text">
+            <a href="mailto:cadineshjagarlamudi@gmail.com">cadineshjagarlamudi@gmail.com</a><br>
+            <a href="mailto:dinesh@essaeglobal.in" style="opacity:0.6;font-size:0.78rem;">dinesh@essaeglobal.in</a>
+          </div>
+        </div>
+        <div class="card-info-row">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="card-info-text">No. 42, Sri Krupa, New D&apos;souza Layout<br>Kerekodi Main Rd, Hosakerehalli<br>BSK 3rd Stage, Bengaluru &ndash; 560 085</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div style="position:relative">
+        <div class="about-img-box">
+          <div class="about-monogram">JD</div>
+          <div class="about-quote">Accuracy is not optional in finance. It is the foundation of every decision we help our clients make.</div>
+          <div class="about-sig">&mdash; CA Dinesh Jagarlamudi, Founder</div>
+        </div>
+        <div class="about-accent"></div>
+        <div class="affiliation-row">
+          <div class="affiliation-pill"><div class="affiliation-dot"></div>Member, Institute of Chartered Accountants of India (ICAI)</div>
+          <div class="affiliation-pill"><div class="affiliation-dot"></div>CA at Essae Global &mdash; Corporate Finance Practice</div>
+          <div class="affiliation-pill"><div class="affiliation-dot"></div>Founder &amp; Partner, J Dinesh &amp; Co, Bengaluru</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag">About the Firm</div>
+        <h2>Where <em>expertise</em> meets<br>personal attention.</h2>
+        <p>J Dinesh &amp; Co is a Bengaluru-based chartered accountancy firm founded on the belief that every client &mdash; individual or corporate &mdash; deserves the same quality of financial guidance that was once available only to the largest enterprises.</p>
+        <p>Led by CA Dinesh Jagarlamudi, the firm brings deep expertise in Indian taxation law, GST compliance, corporate structuring, and audit &mdash; serving a diverse client base spanning salaried professionals, entrepreneurs, MSMEs, and listed companies.</p>
+        <p>With dual engagement as founder of J Dinesh &amp; Co and as a practicing CA at Essae Global, Dinesh brings a rare combination of hands-on corporate finance exposure alongside the personalized responsiveness of a boutique advisory practice.</p>
+        <p style="margin-top:2rem"><a href="#contact" class="btn-primary" style="display:inline-block">Schedule a Meeting</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header">
+      <div>
+        <div class="section-tag">What We Offer</div>
+        <h2>Comprehensive tax &amp;<br><em>financial</em> services.</h2>
+      </div>
+      <p class="section-lead" style="max-width:36ch;font-size:0.9rem;">From individual ITR filing to complex corporate compliance &mdash; all under one trusted practice.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div class="service-title">Income Tax Filing (ITR)</div>
+        <div class="service-desc">Accurate and timely ITR filing for salaried individuals, freelancers, HUFs, and business owners. We maximise your deductions within the legal framework.</div>
+        <div class="service-tag">Individual &middot; Business &middot; HUF</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="service-title">GST Registration &amp; Filing</div>
+        <div class="service-desc">End-to-end GST services &mdash; registration, monthly/quarterly returns (GSTR-1, 3B), annual return (GSTR-9), and reconciliation with audit support.</div>
+        <div class="service-tag">GSTN &middot; Returns &middot; Audit</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <div class="service-title">TDS Compliance &amp; Filing</div>
+        <div class="service-desc">Correct TDS computation, challan payments, quarterly return filing (24Q, 26Q, 27Q, 27EQ), and issuance of Form 16/16A.</div>
+        <div class="service-tag">Quarterly Returns &middot; Form 16</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="service-title">Tax Planning &amp; Advisory</div>
+        <div class="service-desc">Proactive, year-round tax planning to reduce your liability legally &mdash; investment structuring, 80C/80D planning, and capital gains optimisation.</div>
+        <div class="service-tag">LTCG &middot; Investments &middot; Advisory</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="service-title">Corporate Tax Compliance</div>
+        <div class="service-desc">Full corporate tax services including company ITR, MAT computation, advance tax planning, transfer pricing, and ROC filings.</div>
+        <div class="service-tag">Pvt Ltd &middot; LLP &middot; Corporates</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="service-title">Startup &amp; MSME Services</div>
+        <div class="service-desc">Entity incorporation (Pvt Ltd, LLP, OPC), MSME registration, startup India recognition, bookkeeping, payroll, and CFO advisory.</div>
+        <div class="service-tag">Incorporation &middot; Payroll &middot; CFO</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="service-title">Audit &amp; Assurance</div>
+        <div class="service-desc">Statutory audit, tax audit (3CD), internal audit, stock audit, and bank branch audits &mdash; conducted with technical rigour and independence.</div>
+        <div class="service-tag">Statutory &middot; Tax &middot; Internal</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="service-title">Notice &amp; Litigation Support</div>
+        <div class="service-desc">Expert representation before Income Tax Officers, CIT (Appeals), ITAT, and GST authorities. Drafting replies, submissions, and compliance letters.</div>
+        <div class="service-tag">ITD &middot; ITAT &middot; GST Authority</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="service-title">International Taxation</div>
+        <div class="service-desc">DTAA advisory, FEMA/RBI compliances, NRI tax filing, foreign remittance certificates (15CA/15CB), and cross-border structuring.</div>
+        <div class="service-tag">NRI &middot; FEMA &middot; DTAA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="section-inner">
+    <div class="section-tag" style="color:var(--gold-light)">Why Choose Us</div>
+    <h2>The J Dinesh &amp; Co<br><em>difference.</em></h2>
+    <p class="section-lead">Not just compliance &mdash; a partner who understands your complete financial picture.</p>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-num">01</div><div><div class="why-item-title">Qualified &amp; Regulated</div><div class="why-item-desc">Practicing Chartered Accountant, member of ICAI. Every piece of advice meets the highest professional and ethical standards required by Indian law.</div></div></div>
+      <div class="why-item"><div class="why-num">02</div><div><div class="why-item-title">Boutique Attention</div><div class="why-item-desc">You deal directly with the CA &mdash; not an intern. Every client gets personal attention, quick responses, and counsel tailored to their specific situation.</div></div></div>
+      <div class="why-item"><div class="why-num">03</div><div><div class="why-item-title">Corporate + Individual Expertise</div><div class="why-item-desc">Rare dual exposure &mdash; corporate finance at Essae Global combined with individual and MSME advisory at J Dinesh &amp; Co. You get both worlds.</div></div></div>
+      <div class="why-item"><div class="why-num">04</div><div><div class="why-item-title">End-to-End Services</div><div class="why-item-desc">From company formation to statutory audit, ITR filing to litigation representation &mdash; one firm handles your entire compliance lifecycle.</div></div></div>
+      <div class="why-item"><div class="why-num">05</div><div><div class="why-item-title">Bengaluru-Based, Pan-India Practice</div><div class="why-item-desc">Centrally located in Bengaluru&apos;s BSK area, serving clients across India remotely for most tax and compliance requirements.</div></div></div>
+      <div class="why-item"><div class="why-num">06</div><div><div class="why-item-title">Confidential &amp; Transparent</div><div class="why-item-desc">Your financial information is handled with complete discretion. Clear fee structures with no hidden charges &mdash; you always know what you&apos;re paying for.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag">Get in Touch</div>
+    <h2 style="margin-bottom:3rem">Let&apos;s talk about <em>your</em> taxes.</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-card">
+          <h3>J Dinesh &amp; Co</h3>
+          <span class="contact-subtitle">Chartered Accountants &middot; Bengaluru</span>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><div class="contact-item-label">Mobile</div><div class="contact-item-value"><a href="tel:+919071059696">+91 90710 59696</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:cadineshjagarlamudi@gmail.com">cadineshjagarlamudi@gmail.com</a><br><a href="mailto:dinesh@essaeglobal.in" style="font-size:0.78rem;opacity:0.6">dinesh@essaeglobal.in</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="contact-item-label">Office Address</div><div class="contact-item-value">No. 42, Sri Krupa, New D&apos;souza Layout<br>Kerekodi Main Rd, Hosakerehalli<br>BSK 3rd Stage, Bengaluru &ndash; 560 085</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div><div class="contact-item-label">Working Hours</div><div class="contact-item-value">Mon &ndash; Sat: 10:00 AM &ndash; 7:00 PM<br>Appointments preferred</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;">
+            <a href="https://wa.me/919071059696" target="_blank" class="li-btn" style="background:rgba(37,211,102,0.12);border-color:rgba(37,211,102,0.3);color:#6ed89a;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#6ed89a"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 1.999C6.477 1.999 2 6.476 2 11.998c0 1.76.465 3.444 1.348 4.914L2 22l5.236-1.323A9.944 9.944 0 0012 21.998c5.522 0 10-4.477 10-10S17.521 1.999 12 1.999zm0 18.001a7.944 7.944 0 01-4.076-1.124l-.292-.173-3.107.785.822-2.981-.19-.307A7.944 7.944 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+              WhatsApp
+            </a>
+            <a href="tel:+919071059696" class="li-btn" style="background:rgba(52,199,89,0.1);border-color:rgba(52,199,89,0.3);color:#6ed6a0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6ed6a0" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Call: +91 90710 59696
+            </a>
+            <a href="mailto:cadineshjagarlamudi@gmail.com" class="li-btn" style="background:rgba(234,67,53,0.1);border-color:rgba(234,67,53,0.3);color:#f08080;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f08080" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email Dinesh
+            </a>
+            <a href="https://www.linkedin.com/in/cadineshjagarlamudi" target="_blank" class="li-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#7ab3e0"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row-2">
+            <div class="form-row">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="Your name" required>
+            </div>
+            <div class="form-row">
+              <label class="form-label">Mobile Number</label>
+              <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Your Email Address</label>
+            <input type="email" class="form-input" placeholder="your@email.com">
+          </div>
+          <div class="form-row">
+            <label class="form-label">Service Required</label>
+            <select class="form-input form-select">
+              <option value="">Select a service...</option>
+              <option>Income Tax Return (ITR) Filing</option>
+              <option>GST Registration &amp; Filing</option>
+              <option>TDS Compliance</option>
+              <option>Corporate Tax Compliance</option>
+              <option>Tax Planning &amp; Advisory</option>
+              <option>Startup / MSME Services</option>
+              <option>Audit &amp; Assurance</option>
+              <option>Notice &amp; Litigation Support</option>
+              <option>International Taxation / NRI</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="form-label">Your Query</label>
+            <textarea class="form-input" placeholder="Briefly describe what you need help with..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry &rarr;</button>
+          <p class="form-note">Clicking will open your email app with the details pre-filled &mdash; just hit send.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">J Dinesh &amp; Co</div>
+        <div class="footer-logo-sub">Chartered Accountants &middot; Bengaluru, India</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 J Dinesh &amp; Co. All rights reserved.</div>
+      <div class="footer-icai">Member, Institute of Chartered Accountants of India (ICAI)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  var name = e.target.querySelector('input[type="text"]').value;
+  var phone = e.target.querySelector('input[type="tel"]').value;
+  var email = e.target.querySelector('input[type="email"]').value;
+  var service = e.target.querySelector('select').value;
+  var query = e.target.querySelector('textarea').value;
+  var subject = encodeURIComponent('Enquiry from ' + name + (service ? ' – ' + service : ''));
+  var body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Phone: ' + phone + '\n' +
+    'Email: ' + email + '\n' +
+    'Service: ' + (service || 'Not specified') + '\n\n' +
+    'Query:\n' + query
+  );
+  window.location.href = 'mailto:cadineshjagarlamudi@gmail.com?subject=' + subject + '&body=' + body;
+  var btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Opening your email app...';
+  btn.style.background = '#1a6b3c';
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var el = document.querySelector(a.getAttribute('href'));
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
