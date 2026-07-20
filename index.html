@@ -28,7 +28,7 @@
       --bg-surface: #FFFFFF;
       --bg-card: #FFFFFF;
       --bg-card-hover: #FFFFFF;
-      --bg-nav: rgba(250, 250, 248, 0.92);
+      --bg-nav: rgba(250, 250, 248, 0.94);
       --bg-footer: #0F1C32;
       
       --border-color: rgba(15, 28, 50, 0.12);
@@ -67,13 +67,13 @@
     [data-theme="dark"] {
       --bg-main: #07090E;
       --bg-surface: #0F172A;
-      --bg-card: rgba(15, 23, 42, 0.85);
-      --bg-card-hover: rgba(30, 41, 59, 0.95);
-      --bg-nav: rgba(7, 9, 14, 0.92);
+      --bg-card: #0F172A;
+      --bg-card-hover: #1E293B;
+      --bg-nav: rgba(7, 9, 14, 0.94);
       --bg-footer: #05070A;
 
-      --border-color: rgba(255, 255, 255, 0.08);
-      --border-card: rgba(255, 255, 255, 0.12);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-card: rgba(255, 255, 255, 0.14);
       --border-hover: rgba(56, 189, 248, 0.5);
 
       --navy-deep: #0B1120;
@@ -255,7 +255,7 @@
     }
 
     .top-link {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.85);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
@@ -385,7 +385,7 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.88rem;
-      color: #FFFFFF;
+      color: #FFFFFF !important;
       background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
       border: 1px solid var(--accent-gold);
       text-decoration: none;
@@ -395,7 +395,7 @@
     }
 
     [data-theme="dark"] .btn-radial-glow {
-      color: #000;
+      color: #000000 !important;
       background: linear-gradient(135deg, #38BDF8 0%, #34D399 100%);
       border: none;
     }
@@ -420,6 +420,7 @@
       border: 1px solid var(--border-color);
       text-decoration: none;
       transition: all 0.25s;
+      cursor: pointer;
     }
 
     .btn-secondary-shine:hover {
@@ -428,13 +429,37 @@
       transform: translateY(-2px);
     }
 
+    /* Email Direct CTA Button */
+    .btn-email-direct {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #FFFFFF !important;
+      background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+      transition: all 0.25s;
+    }
+
+    .btn-email-direct:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
+    }
+
     /* Theme Toggle Button */
     .theme-toggle-btn {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: var(--bg-surface);
-      border: 1px solid var(--border-color);
+      border: 1.5px solid var(--border-color);
       color: var(--text-main);
       display: flex;
       align-items: center;
@@ -447,7 +472,7 @@
     .theme-toggle-btn:hover {
       border-color: var(--accent-cyan);
       color: var(--accent-cyan);
-      transform: rotate(18deg) scale(1.05);
+      transform: rotate(18deg) scale(1.08);
     }
 
     /* ══════════════════════════════════════════════════════════════
@@ -743,7 +768,7 @@
     }
 
     /* ══════════════════════════════════════════════════════════════
-       PRIMARY SERVICES (INDIAN TAXATION, GST, ITR & AUDIT)
+       PRIMARY SERVICES
        ══════════════════════════════════════════════════════════════ */
     section {
       padding: 5rem 0;
@@ -924,7 +949,7 @@
     }
 
     /* ══════════════════════════════════════════════════════════════
-       AUDIT & CORPORATE SECTION (#audit Anchor Fixed)
+       AUDIT & CORPORATE SECTION (#audit Anchor)
        ══════════════════════════════════════════════════════════════ */
     .audit-section {
       background: var(--bg-surface);
@@ -952,7 +977,7 @@
     }
 
     /* ══════════════════════════════════════════════════════════════
-       NEW: ADVANCE TAX & GST COMPLIANCE CALENDAR SECTION
+       ADVANCE TAX & GST COMPLIANCE CALENDAR SECTION WITH 50-YR .ICS RECURRING REMINDERS
        ══════════════════════════════════════════════════════════════ */
     .calendar-section {
       background: var(--bg-main);
@@ -1067,8 +1092,8 @@
 
     .cta-banner-content p {
       font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 600px;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 620px;
     }
 
     /* ══════════════════════════════════════════════════════════════
@@ -1107,7 +1132,7 @@
 
     .calc-res-card.best {
       border-color: var(--accent-emerald);
-      background: rgba(16, 185, 129, 0.06);
+      background: rgba(16, 185, 129, 0.08);
     }
 
     .calc-res-lbl {
@@ -1127,7 +1152,7 @@
     }
 
     /* ══════════════════════════════════════════════════════════════
-       INTERACTIVE TAX ESTIMATOR
+       INTERACTIVE TAX ESTIMATOR & DOCUMENT CHECKLIST
        ══════════════════════════════════════════════════════════════ */
     .estimator-section {
       background: var(--bg-surface);
@@ -1365,9 +1390,9 @@
       color: #FFFFFF;
       border: 1px solid var(--accent-emerald);
       border-radius: var(--radius-md);
-      padding: 1.25rem 1.75rem;
+      padding: 1.5rem 1.75rem;
       box-shadow: 0 15px 35px rgba(0,0,0,0.35);
-      max-width: 420px;
+      max-width: 460px;
       animation: slideUp 0.3s ease;
     }
 
@@ -1378,10 +1403,24 @@
 
     .toast-title {
       font-family: var(--font-heading);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #34D399;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .toast-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.85rem;
+      padding: 0.5rem 1rem;
+      background: #25D366;
+      color: #FFF;
+      font-weight: 700;
+      font-size: 0.82rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
     }
 
     /* Sticky Floating WhatsApp Widget */
@@ -1504,6 +1543,10 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           +91 90710 59696
         </a>
+        <a href="mailto:cadineshjagarlamudi@gmail.com?subject=Tax%20Filing%20Request%20%26%20Documents%20-%20J%20Dinesh%20%26%20Co&amp;body=Hello%20CA%20Dinesh,%0A%0AI%20would%20like%20to%20request%20tax%20filing%20services%20and%20attach%20my%20documents.%0A%0AName:%20%0APhone:%20%0AService%20Required:%20" class="top-link" style="color:#F59E0B">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Send Documents via Email
+        </a>
         <a href="https://wa.me/919071059696" target="_blank" class="top-link" style="color:#34D399">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.76.465 3.444 1.348 4.914L2 22l5.236-1.323A9.944 9.944 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.944 7.944 0 01-4.076-1.124l-.292-.173-3.107.785.822-2.981-.19-.307A7.944 7.944 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
           Instant WhatsApp
@@ -1547,7 +1590,7 @@
     </div>
   </header>
 
-  <!-- ═══ HERO SECTION (PRIMARY FOCUS: INDIAN TAXATION, GST, ITR & AUDIT) ═══ -->
+  <!-- ═══ HERO SECTION ═══ -->
   <section id="home" class="hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -1561,12 +1604,17 @@
         <p class="hero-desc">
           Expert Income Tax Filing (ITR 1-7), GST Compliance, Statutory &amp; Tax Audits, Income Tax Notice Representation, and Corporate Financial Advisory — delivered with precision, integrity, and personal CA attention.
         </p>
+        
         <div class="hero-actions">
           <a href="#contact" class="btn-radial-glow">
             Schedule a Consultation
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="#services" class="btn-secondary-shine">View All Services</a>
+          <!-- Prominent Email Direct Option -->
+          <a href="mailto:cadineshjagarlamudi@gmail.com?subject=Tax%20Filing%20Request%20%26%20Documents%20-%20J%20Dinesh%20%26%20Co&amp;body=Hello%20CA%20Dinesh,%0A%0AI%20would%20like%20to%20request%20tax%20filing%20services%20and%20attach%20my%20tax%20documents%20(Form%2016%20/%20Bank%20Statements).%0A%0AName:%20%0AMobile:%20%0AService:%20" class="btn-email-direct">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Send Documents &amp; Request Tax Filing
+          </a>
         </div>
 
         <div class="hero-stats">
@@ -1575,7 +1623,7 @@
             <div class="stat-label">ICAI Member</div>
           </div>
           <div class="stat-item">
-            <div class="stat-value">500+</div>
+            <div class="stat-value">1500+</div>
             <div class="stat-label">Returns Filed</div>
           </div>
           <div class="stat-item">
@@ -1633,7 +1681,7 @@
           <div class="card-actions-grid">
             <a href="https://wa.me/919071059696" target="_blank" class="card-btn btn-wa-action">WhatsApp</a>
             <a href="tel:+919071059696" class="card-btn btn-call-action">Call Now</a>
-            <a href="mailto:cadineshjagarlamudi@gmail.com" class="card-btn btn-email-action">Email</a>
+            <a href="mailto:cadineshjagarlamudi@gmail.com?subject=Tax%20Consultation%20Request" class="card-btn btn-email-action">Email</a>
             <a href="https://www.linkedin.com/in/cadineshjagarlamudi" target="_blank" class="card-btn btn-li-action">LinkedIn</a>
           </div>
         </div>
@@ -1641,7 +1689,7 @@
     </div>
   </section>
 
-  <!-- ═══ SERVICES BENTO GRID (INDIAN TAX, GST, ITR & AUDIT) ═══ -->
+  <!-- ═══ SERVICES BENTO GRID ═══ -->
   <section id="services">
     <div class="container">
       <div class="services-header">
@@ -1782,7 +1830,7 @@
     </div>
   </section>
 
-  <!-- ═══ AUDIT & CORPORATE SECTION (#audit Anchor Fixed) ═══ -->
+  <!-- ═══ AUDIT & CORPORATE SECTION (#audit Anchor) ═══ -->
   <section id="audit" class="audit-section">
     <div class="container">
       <div class="sec-kicker"><span class="sec-kicker-line"></span> Audit &amp; Assurance Services</div>
@@ -1814,7 +1862,7 @@
     </div>
   </section>
 
-  <!-- ═══ ADVANCE TAX & GST COMPLIANCE CALENDAR SECTION ═══ -->
+  <!-- ═══ ADVANCE TAX & GST COMPLIANCE CALENDAR SECTION WITH 50-YR RECURRING .ICS REMINDERS ═══ -->
   <section id="calendar-due-dates" class="calendar-section">
     <div class="container">
       <div style="text-align:center;max-width:720px;margin:0 auto">
@@ -1833,7 +1881,7 @@
               <div class="calendar-badge-icon">🗓️</div>
               <div>
                 <h3 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--text-main)">Quarterly Advance Tax Schedule (u/s 208/211)</h3>
-                <p style="font-size:0.8rem;color:var(--text-muted)">Applicable if total estimated annual tax liability exceeds ₹10,000</p>
+                <p style="font-size:0.8rem;color:var(--text-muted)">Includes 1-Month, 15-Day &amp; 5-Day Prior Auto-Reminders for 50 Years</p>
               </div>
             </div>
 
@@ -1877,7 +1925,7 @@
               <div class="calendar-badge-icon">📊</div>
               <div>
                 <h3 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--text-main)">Monthly GST, TDS &amp; Annual Deadlines</h3>
-                <p style="font-size:0.8rem;color:var(--text-muted)">Recurring statutory filings for businesses &amp; employers</p>
+                <p style="font-size:0.8rem;color:var(--text-muted)">Includes 1-Month, 15-Day &amp; 5-Day Prior Auto-Reminders for 50 Years</p>
               </div>
             </div>
 
@@ -1886,7 +1934,7 @@
                 <span class="date-tag">7th Monthly</span>
                 <div>
                   <div class="date-title">TDS Payment Deposit (Form 281)</div>
-                  <div class="date-sub">Deposit TDS deducted in previous month to avoiding 1.5%/month interest.</div>
+                  <div class="date-sub">Deposit TDS deducted in previous month to avoid 1.5%/month interest.</div>
                 </div>
               </li>
               <li class="due-date-item">
@@ -1915,18 +1963,18 @@
         </div>
       </div>
 
-      <!-- Lead Capture & Reminder Download Banner -->
+      <!-- Real 50-Year Recurring .ICS Calendar Download Card -->
       <div class="cta-banner-card">
         <div class="cta-banner-content">
-          <h3>Get Automatic WhatsApp Due Date Reminders</h3>
-          <p>Subscribe to CA Dinesh's compliance alert service to receive early notifications before every Advance Tax, GST, and ITR deadline.</p>
+          <h3>Add 50-Year Tax Due Date Reminders to Your Device Calendar</h3>
+          <p>Download our official Tax &amp; GST Compliance Calendar (.ics file). Automatically sets **1 Month Prior, 15 Days Prior, and 5 Days Prior** popup notifications for every tax deadline, recurring every year for the next 50 years on Google Calendar, Apple Calendar, or Outlook!</p>
         </div>
         <div style="display:flex;gap:1rem;flex-wrap:wrap">
-          <a href="https://wa.me/919071059696?text=Hi%20CA%20Dinesh,%20please%20subscribe%20me%20to%20your%20Tax%20and%20GST%20Due%20Date%20Reminder%20list." target="_blank" class="btn-radial-glow" style="background:#25D366;color:#FFF;border:none">
-            Subscribe on WhatsApp
-          </a>
+          <button onclick="downloadTaxCalendarICS()" class="btn-radial-glow" style="background:linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);color:#FFF;border:none">
+            📅 Download 50-Yr Tax Calendar (.ics)
+          </button>
           <button onclick="window.print()" class="btn-secondary-shine" style="background:rgba(255,255,255,0.15);color:#FFF;border-color:rgba(255,255,255,0.3)">
-            🖨️ Print / Save PDF Calendar
+            🖨️ Print Due Dates Schedule
           </button>
         </div>
       </div>
@@ -1959,14 +2007,14 @@
     </div>
   </section>
 
-  <!-- ═══ INTERACTIVE TAX REGIME CALCULATOR ═══ -->
+  <!-- ═══ REALTIME INCOME TAX REGIME CALCULATOR ═══ -->
   <section id="calculator" style="background:var(--bg-surface);border-y:1px solid var(--border-color)">
     <div class="container">
       <div style="text-align:center;max-width:650px;margin:0 auto">
         <div class="sec-kicker" style="justify-content:center"><span class="sec-kicker-line"></span> Tax Planning Tool</div>
         <h2 class="sec-title">Indian Income Tax Calculator (FY 2024-25 / AY 2025-26)</h2>
         <p class="sec-desc" style="margin:0 auto">
-          Compare estimated tax liability under the New Tax Regime (u/s 115BAC) vs Old Tax Regime instantly.
+          Compare estimated tax liability under the New Tax Regime (u/s 115BAC) vs Old Tax Regime instantly in real time.
         </p>
       </div>
 
@@ -1975,12 +2023,12 @@
           <div>
             <div class="form-group">
               <label>Annual Gross Salary / Taxable Income (₹)</label>
-              <input type="number" class="form-input" id="calcIncome" value="1200000" placeholder="e.g. 1200000" oninput="calculateTax()">
+              <input type="number" class="form-input" id="calcIncome" value="1200000" placeholder="e.g. 1200000">
             </div>
 
             <div class="form-group">
               <label>Total Old Regime Deductions (80C, 80D, HRA) (₹)</label>
-              <input type="number" class="form-input" id="calcDeduction" value="200000" placeholder="e.g. 200000" oninput="calculateTax()">
+              <input type="number" class="form-input" id="calcDeduction" value="200000" placeholder="e.g. 200000">
             </div>
           </div>
 
@@ -2009,7 +2057,7 @@
     </div>
   </section>
 
-  <!-- ═══ INTERACTIVE TAX ESTIMATOR & DOCUMENT CHECKLIST ═══ -->
+  <!-- ═══ TAX ESTIMATOR & DOCUMENT CHECKLIST ═══ -->
   <section id="estimator" class="estimator-section">
     <div class="container">
       <div class="estimator-card">
@@ -2018,13 +2066,13 @@
             <div class="sec-kicker"><span class="sec-kicker-line"></span> Interactive Assistant</div>
             <h2 class="sec-title">Tax Compliance &amp; Document Checklist</h2>
             <p class="sec-desc" style="font-size:0.95rem">
-              Select your profile to view mandatory Indian ITR filings, tax saving opportunities, and required document checklists.
+              Select your profile and service requirement to view mandatory Indian ITR filings, tax saving opportunities, and required document checklists.
             </p>
 
             <form style="margin-top:2rem" onsubmit="event.preventDefault()">
               <div class="form-group">
                 <label>Select Your Profile Category</label>
-                <select class="form-select" id="profileSelect" onchange="updateEstimator()">
+                <select class="form-select" id="profileSelect">
                   <option value="salaried-in">Salaried Professional (India)</option>
                   <option value="business-msme">Business / MSME Owner / Professional</option>
                   <option value="nri-investor">NRI with Indian Income / Property Sale</option>
@@ -2034,9 +2082,9 @@
 
               <div class="form-group">
                 <label>Primary Service Requirement</label>
-                <select class="form-select" id="requirementSelect" onchange="updateEstimator()">
-                  <option value="itr">Annual Income Tax Return (ITR)</option>
-                  <option value="gst-tds">GST Registration / TDS Returns</option>
+                <select class="form-select" id="requirementSelect">
+                  <option value="itr">Annual Income Tax Return (ITR 1-7)</option>
+                  <option value="gst-tds">GST Registration &amp; Filing / TDS</option>
                   <option value="audit-roc">Tax Audit 3CD &amp; ROC Filing</option>
                   <option value="fbar-dtaa">Cross-Border DTAA &amp; US Tax</option>
                 </select>
@@ -2056,7 +2104,10 @@
               <li>Investment Proofs (80C / 80D / LIC / NPS)</li>
               <li>Bank Interest Certificates</li>
             </ul>
-            <a href="#contact" class="btn-radial-glow" style="width:100%;text-align:center">Request Consultation for This Profile</a>
+            <!-- Routing to Contact Form with Auto-Selection -->
+            <button onclick="requestConsultationForProfile()" class="btn-radial-glow" style="width:100%">
+              Request Consultation for This Profile
+            </button>
           </div>
         </div>
       </div>
@@ -2155,7 +2206,7 @@
         <div class="contact-form-card">
           <h3>Send Us a Direct Message</h3>
           <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1.5rem">
-            Fill out your details below to request a tax or financial consultation.
+            Fill out your details below to request a tax consultation or request a callback.
           </p>
 
           <form id="consultationForm" onsubmit="handleConsultationSubmit(event)" autocomplete="on">
@@ -2178,12 +2229,13 @@
                 <option value="Income Tax Notice Reply & ITAT">Income Tax Notice &amp; ITAT Reply</option>
                 <option value="Company / LLP Incorporation">Company Incorporation &amp; ROC</option>
                 <option value="US & Cross-Border Taxation">US &amp; Cross-Border Expat Tax</option>
+                <option value="Request a Call Back">Request a Call Back</option>
               </select>
             </div>
 
             <div class="form-group">
               <label>Brief Message / Details</label>
-              <textarea class="form-input" id="clientMessage" style="min-height:90px;resize:vertical" placeholder="Describe your tax requirement or questions..."></textarea>
+              <textarea class="form-input" id="clientMessage" style="min-height:90px;resize:vertical" placeholder="Describe your tax requirement or request a callback..."></textarea>
             </div>
 
             <button type="submit" class="btn-radial-glow" style="width:100%">Submit Consultation Request</button>
@@ -2192,10 +2244,21 @@
 
         <!-- Contact Info Card -->
         <div class="hero-card">
-          <h3 style="font-family:var(--font-heading);font-size:1.4rem;color:var(--text-main);margin-bottom:1rem">J Dinesh &amp; Co</h3>
-          <p style="font-size:0.92rem;color:var(--text-muted);margin-bottom:1.5rem">
+          <h3 style="font-family:var(--font-heading);font-size:1.4rem;color:var(--text-main);margin-bottom:0.5rem">J Dinesh &amp; Co</h3>
+          <p style="font-size:0.92rem;color:var(--text-muted);margin-bottom:1.25rem">
             Chartered Accountants · Bengaluru · Pan-India &amp; Global Remote Service
           </p>
+
+          <!-- Direct Send Documents Email Box -->
+          <div style="background:var(--bg-main);border:1px solid var(--accent-gold);border-radius:var(--radius-md);padding:1.25rem;margin-bottom:1.5rem">
+            <div style="font-size:0.88rem;font-weight:700;color:var(--accent-gold);margin-bottom:0.35rem">📧 Need to Send Tax Documents Directly?</div>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem">
+              Click below to compose a direct email with pre-filled details to send your Form 16, Bank Statements, or Financials.
+            </p>
+            <a href="mailto:cadineshjagarlamudi@gmail.com?subject=Tax%20Filing%20Request%20%26%20Documents%20-%20J%20Dinesh%20%26%20Co&amp;body=Hello%20CA%20Dinesh,%0A%0AI%20would%20like%20to%20request%20tax%20filing%20services%20and%20attach%20my%20documents.%0A%0AName:%20%0APhone:%20%0AService:%20" class="btn-email-direct" style="width:100%;text-align:center">
+              Send Documents via Email (cadineshjagarlamudi@gmail.com)
+            </a>
+          </div>
 
           <div class="profile-info-list">
             <div class="info-row">
@@ -2221,14 +2284,6 @@
                 <div class="info-val">No. 42, Sri Krupa, New D'souza Layout, Hosakerehalli, BSK 3rd Stage, Bengaluru – 560 085</div>
               </div>
             </div>
-
-            <div class="info-row">
-              <div class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div>
-                <div class="info-lbl">Office Hours</div>
-                <div class="info-val">Monday – Saturday | 10:00 AM – 7:00 PM IST</div>
-              </div>
-            </div>
           </div>
 
           <div style="margin-top:1.5rem">
@@ -2241,10 +2296,20 @@
     </div>
   </section>
 
-  <!-- Interactive Toast Notification Modal -->
+  <!-- Toast Notification Modal -->
   <div class="toast-modal" id="toastModal">
-    <div class="toast-title">✓ Request Received!</div>
-    <div style="font-size:0.88rem" id="toastMsg">Thank you! Your consultation request has been submitted. We are opening WhatsApp to connect with CA Dinesh directly.</div>
+    <div class="toast-title">✓ Consultation Request Prepared!</div>
+    <div style="font-size:0.88rem;color:rgba(255,255,255,0.9)" id="toastMsg">
+      Thank you! Your request details have been prepared. Click below to complete sending via WhatsApp or Email:
+    </div>
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.85rem">
+      <a id="toastWaLink" href="#" target="_blank" class="toast-action-btn">
+        <span>💬 Complete on WhatsApp</span>
+      </a>
+      <a id="toastEmailLink" href="#" class="toast-action-btn" style="background:#D97706">
+        <span>📧 Send via Email</span>
+      </a>
+    </div>
   </div>
 
   <!-- Sticky Floating WhatsApp Badge -->
@@ -2287,10 +2352,12 @@
        JAVASCRIPT SCRIPTS
        ══════════════════════════════════════════════════════════════ */
   <script>
-    // Robust Light / Dark Theme Switcher Logic
+    // 1. Theme Switcher Logic
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
+      document.body.setAttribute('data-theme', theme);
       localStorage.setItem('ca_theme', theme);
+
       const icon = document.getElementById('themeIcon');
       if (icon) {
         if (theme === 'dark') {
@@ -2307,15 +2374,172 @@
       setTheme(next);
     }
 
-    // Load saved theme or default to light
-    const savedTheme = localStorage.getItem('ca_theme') || 'light';
-    setTheme(savedTheme);
+    // 2. Real .ICS Calendar Generator with 1-Month, 15-Day & 5-Day Alarms for 50 Years
+    function downloadTaxCalendarICS() {
+      const icsData = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//J Dinesh and Co//Tax Compliance Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+SUMMARY:Q1 Advance Tax Due (15%) - J Dinesh & Co
+DESCRIPTION:Pay at least 15% of estimated net income tax liability for FY.
+DTSTART;VALUE=DATE:20240615
+DTEND;VALUE=DATE:20240616
+RRULE:FREQ=YEARLY;COUNT=50
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q1 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q1 Advance Tax Due in 15 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P15D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:URGENT Reminder: Q1 Advance Tax Due in 5 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P5D
+END:VALARM
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Q2 Advance Tax Due (45%) - J Dinesh & Co
+DESCRIPTION:Pay cumulative 45% of total estimated tax liability.
+DTSTART;VALUE=DATE:20240915
+DTEND;VALUE=DATE:20240916
+RRULE:FREQ=YEARLY;COUNT=50
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q2 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q2 Advance Tax Due in 15 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P15D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:URGENT Reminder: Q2 Advance Tax Due in 5 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P5D
+END:VALARM
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Q3 Advance Tax Due (75%) - J Dinesh & Co
+DESCRIPTION:Pay cumulative 75% of total estimated tax liability.
+DTSTART;VALUE=DATE:20241215
+DTEND;VALUE=DATE:20241216
+RRULE:FREQ=YEARLY;COUNT=50
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q3 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q3 Advance Tax Due in 15 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P15D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:URGENT Reminder: Q3 Advance Tax Due in 5 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P5D
+END:VALARM
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Q4 Advance Tax Due (100%) - J Dinesh & Co
+DESCRIPTION:Pay 100% of estimated tax before fiscal year close.
+DTSTART;VALUE=DATE:20250315
+DTEND;VALUE=DATE:20250316
+RRULE:FREQ=YEARLY;COUNT=50
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q4 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Q4 Advance Tax Due in 15 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P15D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:URGENT Reminder: Q4 Advance Tax Due in 5 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P5D
+END:VALARM
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Annual ITR Filing Deadline (Non-Audit) - J Dinesh & Co
+DESCRIPTION:Income Tax Return filing deadline for salaried individuals and non-audit businesses.
+DTSTART;VALUE=DATE:20250731
+DTEND;VALUE=DATE:20250801
+RRULE:FREQ=YEARLY;COUNT=50
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Annual ITR Filing Due in 1 Month! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Annual ITR Filing Due in 15 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P15D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:URGENT Reminder: Annual ITR Filing Due in 5 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P5D
+END:VALARM
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Tax Audit (3CD) & Business ITR Deadline - J Dinesh & Co
+DESCRIPTION:Tax audit report and corporate return filing deadline under Sec 44AB.
+DTSTART;VALUE=DATE:20251031
+DTEND;VALUE=DATE:20251101
+RRULE:FREQ=YEARLY;COUNT=50
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Tax Audit & Business ITR Due in 1 Month! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P30D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Tax Audit & Business ITR Due in 15 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P15D
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:URGENT Reminder: Tax Audit & Business ITR Due in 5 Days! Contact CA Dinesh (+91 9071059696).
+TRIGGER:-P5D
+END:VALARM
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
 
-    // Income Tax Old vs New Regime Calculator
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.setAttribute('download', 'Tax_Compliance_Calendar_J_Dinesh_Co.ics');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // 3. Realtime Income Tax Calculator Logic
     function calculateTax() {
-      const income = parseFloat(document.getElementById('calcIncome').value) || 0;
-      const deduction = parseFloat(document.getElementById('calcDeduction').value) || 0;
+      const incomeInput = document.getElementById('calcIncome');
+      const deductionInput = document.getElementById('calcDeduction');
+      if (!incomeInput || !deductionInput) return;
 
+      const income = parseFloat(incomeInput.value) || 0;
+      const deduction = parseFloat(deductionInput.value) || 0;
+
+      // New Tax Regime u/s 115BAC (FY 2024-25 default slabs with ₹75k std deduction)
       const stdDedNew = 75000;
       const taxableNew = Math.max(0, income - stdDedNew);
       let taxNew = 0;
@@ -2329,6 +2553,7 @@
       if (taxableNew <= 700000) taxNew = 0;
       const totalNewTax = Math.round(taxNew * 1.04);
 
+      // Old Tax Regime (std deduction ₹50k + deductions)
       const stdDedOld = 50000;
       const taxableOld = Math.max(0, income - stdDedOld - deduction);
       let taxOld = 0;
@@ -2362,7 +2587,83 @@
       }
     }
 
-    // Safe Form Submission Handler
+    // 4. Dynamic Tax Estimator & Document Checklist Logic
+    const estimatorData = {
+      'salaried-in-itr': {
+        title: 'Salaried Professional — Income Tax Return (ITR-1 / ITR-2)',
+        desc: 'Complete ITR filing for salaried employees with Form 16, HRA exemption, Sec 80C/80D/80CCD deductions, capital gains, and AIS/26AS reconciliation.',
+        docs: ['Form 16 from Employer', 'Form 26AS & AIS/TIS Statement', 'Investment Proofs (80C / 80D / NPS)', 'Bank Interest Certificates']
+      },
+      'salaried-in-gst-tds': {
+        title: 'Salaried / Freelancer — TDS Refund & Capital Gains',
+        desc: 'TDS credit verification, excess TDS refund claims, and stock/mutual fund capital gains tax computation.',
+        docs: ['Form 26AS & AIS Report', 'Demat / Capital Gains Statements', 'Bank Account Details for Refund']
+      },
+      'business-msme-itr': {
+        title: 'Business & MSME — Business ITR (ITR-3 / ITR-4)',
+        desc: 'Presumptive tax u/s 44AD/44ADA or regular business ITR filing with profit & loss calculation and depreciation schedules.',
+        docs: ['Tally / Bookkeeping Summary', 'Bank Statements (April to March)', 'GST Return Summaries', 'Asset Purchase Bills']
+      },
+      'business-msme-gst-tds': {
+        title: 'Business & MSME — GST Returns & TDS Filing',
+        desc: 'Monthly GSTR-1, GSTR-3B, GSTR-2B Input Tax Credit (ITC) reconciliation, and quarterly 24Q/26Q TDS returns.',
+        docs: ['Sales & Purchase Register', 'GSTR-2B Recon Sheet', 'TDS Challan Receipts']
+      },
+      'business-msme-audit-roc': {
+        title: 'Business & MSME — Tax Audit (3CD) & ROC Compliance',
+        desc: 'Mandatory Tax Audit under Section 44AB (Form 3CD) and annual MCA ROC filings (AOC-4, MGT-7/7A) certified with ICAI UDIN.',
+        docs: ['Audited Financial Statements', '3CD Audit Checklist Data', 'DIR-3 KYC Details']
+      },
+      'nri-investor-itr': {
+        title: 'NRI & Foreign Investor — Indian ITR Filing',
+        desc: 'Specialized NRI ITR filing for rental income in India, property sale capital gains, and NRE/NRO interest tax exemption.',
+        docs: ['NRO & NRE Bank Statements', 'Property Sale/Rent Agreements', 'TDS Certificates u/s 195']
+      },
+      'nri-investor-fbar-dtaa': {
+        title: 'NRI & Foreign Investor — DTAA Relief & Form 15CA / 15CB',
+        desc: 'DTAA tax credit claims under Article 25 to avoid double tax, and Chartered Accountant 15CB certificate for funds repatriation.',
+        docs: ['Foreign Tax Paid Proofs', 'Form 15CB Transfer Data', 'Passport & PAN Copies']
+      },
+      'us-expat-fbar-dtaa': {
+        title: 'US Expat & Returnee — IRS Form 1040, FBAR & FATCA',
+        desc: 'IRS Form 1040/1040-NR, FinCEN 114 (FBAR), FATCA Form 8938, foreign tax credits (Form 1116), and dual-status tax filing.',
+        docs: ['W-2 / 1099 Statements', 'Peak Indian Bank Account Balances', 'RSU / ESOP Vesting Reports', 'Form 67 for Foreign Credit']
+      }
+    };
+
+    function updateEstimator() {
+      const profile = document.getElementById('profileSelect').value;
+      const req = document.getElementById('requirementSelect').value;
+      const key = `${profile}-${req}`;
+      const fallbackKey = `${profile}-itr`;
+      
+      const data = estimatorData[key] || estimatorData[fallbackKey] || {
+        title: `Selected: ${profile.toUpperCase()}`,
+        desc: 'Custom tax compliance roadmap and mandatory filing checklist.',
+        docs: ['PAN & Aadhaar Copy', 'Financial Statements / Income Proofs', 'Bank Statements']
+      };
+
+      document.getElementById('resTitle').innerText = data.title;
+      document.getElementById('resDesc').innerText = data.desc;
+      const docsList = document.getElementById('resDocs');
+      docsList.innerHTML = data.docs.map(doc => `<li>${doc}</li>`).join('');
+    }
+
+    // Route Estimator Selection to Contact Form
+    function requestConsultationForProfile() {
+      const serviceSelect = document.getElementById('clientService');
+      const req = document.getElementById('requirementSelect').value;
+      
+      if (req === 'itr') serviceSelect.value = 'Income Tax Return Filing (ITR)';
+      else if (req === 'gst-tds') serviceSelect.value = 'GST Registration & Filing';
+      else if (req === 'audit-roc') serviceSelect.value = 'Tax Audit (3CD) & Statutory Audit';
+      else if (req === 'fbar-dtaa') serviceSelect.value = 'US & Cross-Border Taxation';
+
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('clientName').focus();
+    }
+
+    // 5. Safe Form Submission Handler with Guaranteed Open Links
     function handleConsultationSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('clientName').value;
@@ -2373,12 +2674,17 @@
       const waText = `Hello CA Dinesh,%0A%0AI would like to schedule a consultation.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service Required:* ${encodeURIComponent(service)}%0A*Notes:* ${encodeURIComponent(message)}`;
       const waUrl = `https://wa.me/919071059696?text=${waText}`;
 
+      const emailSubj = `Consultation / Callback Request - ${encodeURIComponent(name)}`;
+      const emailBody = `Hello CA Dinesh,%0A%0AI would like to request a consultation / callback.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0ADetails: ${encodeURIComponent(message)}`;
+      const emailUrl = `mailto:cadineshjagarlamudi@gmail.com?subject=${emailSubj}&body=${emailBody}`;
+
+      document.getElementById('toastWaLink').setAttribute('href', waUrl);
+      document.getElementById('toastEmailLink').setAttribute('href', emailUrl);
+
       const toast = document.getElementById('toastModal');
       toast.style.display = 'block';
 
-      setTimeout(() => {
-        window.open(waUrl, '_blank');
-      }, 1000);
+      window.location.href = waUrl;
     }
 
     // Service Filter Function
@@ -2399,54 +2705,39 @@
       });
     }
 
-    // Dynamic Tax Estimator Data
-    const estimatorData = {
-      'salaried-in': {
-        title: 'Selected: Salaried Professional (India)',
-        desc: 'ITR-1 / ITR-2 filing with Form 16 reconciliation, HRA exemption, Sec 80C/80D/80CCD deductions, and capital gains computation.',
-        docs: ['Form 16 from Employer', 'Form 26AS & AIS/TIS Statement', 'Investment Proofs (80C / 80D / NPS)', 'Bank Interest Certificates']
-      },
-      'business-msme': {
-        title: 'Selected: Business / MSME Owner / Professional',
-        desc: 'Complete business tax management — Profit & Loss, GST returns, Sec 44AB Tax Audit (3CD), ROC filings, and Virtual CFO guidance.',
-        docs: ['Books of Accounts / Tally / Zoho Data', 'GST Returns (GSTR-1 & 3B)', 'Bank Account Statements', 'PAN & Registration Details']
-      },
-      'nri-investor': {
-        title: 'Selected: NRI with Indian Income / Property Sale',
-        desc: 'NRI tax compliance in India, rental income tax, capital gains tax on property sale, NRE/NRO repatriation, and Form 15CA/15CB certificates.',
-        docs: ['NRE & NRO Bank Statements', 'Property Sale/Purchase Deeds & TDS Proof', 'Form 15CA & 15CB Certificates', 'PAN Card & Passport Copy']
-      },
-      'us-expat': {
-        title: 'Selected: US Expat / H1B / Green Card in India',
-        desc: 'Cross-border tax preparation covering IRS Form 1040, FinCEN 114 (FBAR), Form 8938, and Indian ITR with DTAA Article 25 foreign tax credit.',
-        docs: ['W-2 / 1099 / Indian Salary Slips', 'Peak Balances of Indian Bank Accounts', 'RSU / Stock Vesting & Sale Reports', 'Form 67 for Foreign Tax Credit']
-      }
-    };
+    // Initial Setup & Event Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('ca_theme') || 'light';
+      setTheme(savedTheme);
 
-    function updateEstimator() {
-      const profile = document.getElementById('profileSelect').value;
-      const data = estimatorData[profile];
-      if (data) {
-        document.getElementById('resTitle').innerText = data.title;
-        document.getElementById('resDesc').innerText = data.desc;
-        const docsList = document.getElementById('resDocs');
-        docsList.innerHTML = data.docs.map(doc => `<li>${doc}</li>`).join('');
+      const calcInc = document.getElementById('calcIncome');
+      const calcDed = document.getElementById('calcDeduction');
+      if (calcInc && calcDed) {
+        calcInc.addEventListener('input', calculateTax);
+        calcInc.addEventListener('keyup', calculateTax);
+        calcDed.addEventListener('input', calculateTax);
+        calcDed.addEventListener('keyup', calculateTax);
+        calculateTax();
       }
-    }
 
-    // Card Mouse Follow Glow
-    document.addEventListener('mousemove', (e) => {
-      document.querySelectorAll('.glow-card, .hero-card, .why-card, .audit-card, .calendar-card').forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
+      const profSel = document.getElementById('profileSelect');
+      const reqSel = document.getElementById('requirementSelect');
+      if (profSel && reqSel) {
+        profSel.addEventListener('change', updateEstimator);
+        reqSel.addEventListener('change', updateEstimator);
+        updateEstimator();
+      }
+
+      document.addEventListener('mousemove', (e) => {
+        document.querySelectorAll('.glow-card, .hero-card, .why-card, .audit-card, .calendar-card').forEach(card => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
       });
     });
-
-    // Run initial tax calculation
-    calculateTax();
   </script>
 </body>
 </html>
