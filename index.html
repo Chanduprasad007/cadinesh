@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>J Dinesh &amp; Co | Chartered Accountants | Bengaluru</title>
-  <meta name="description" content="J Dinesh &amp; Co – Trusted Chartered Accountants in Bengaluru specializing in Indian Taxation (ITR), GST Registration &amp; Filing, Tax Audits, Corporate Compliance, and US Expat Tax.">
+  <meta name="description" content="J Dinesh &amp; Co – Trusted Chartered Accountants in Bengaluru specializing in Indian Income Tax (ITR), GST Registration &amp; Returns, Tax Audits, Corporate Compliance, and US Expat Tax.">
   <meta name="keywords" content="Chartered Accountant Bengaluru, CA Dinesh Jagarlamudi, Income Tax Filing Bengaluru, GST Consultant, ITR 1-7, Tax Audit 3CD, Startup Incorporation, US Tax India, DTAA">
   
   <!-- OpenGraph Tags -->
@@ -16,7 +16,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     /* ══════════════════════════════════════════════════════════════
@@ -26,13 +26,14 @@
       /* LIGHT MODE DEFAULTS */
       --bg-main: #FAFAF8;
       --bg-surface: #FFFFFF;
-      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-card: #FFFFFF;
       --bg-card-hover: #FFFFFF;
-      --bg-nav: rgba(250, 250, 248, 0.85);
+      --bg-nav: rgba(250, 250, 248, 0.92);
+      --bg-footer: #0F1C32;
       
-      --border-color: rgba(15, 28, 50, 0.1);
-      --border-card: rgba(15, 28, 50, 0.12);
-      --border-hover: rgba(14, 165, 233, 0.4);
+      --border-color: rgba(15, 28, 50, 0.12);
+      --border-card: rgba(15, 28, 50, 0.14);
+      --border-hover: rgba(2, 132, 199, 0.5);
 
       --navy-deep: #0F1C32;
       --navy-mid: #1B2B4B;
@@ -50,7 +51,7 @@
 
       --shadow-sm: 0 2px 8px rgba(15, 28, 50, 0.05);
       --shadow-md: 0 10px 30px rgba(15, 28, 50, 0.08);
-      --shadow-glow: 0 0 25px rgba(14, 165, 233, 0.15);
+      --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.15);
 
       --font-heading: 'Outfit', system-ui, sans-serif;
       --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -66,13 +67,14 @@
     [data-theme="dark"] {
       --bg-main: #07090E;
       --bg-surface: #0F172A;
-      --bg-card: rgba(15, 23, 42, 0.75);
-      --bg-card-hover: rgba(30, 41, 59, 0.9);
-      --bg-nav: rgba(7, 9, 14, 0.85);
+      --bg-card: rgba(15, 23, 42, 0.85);
+      --bg-card-hover: rgba(30, 41, 59, 0.95);
+      --bg-nav: rgba(7, 9, 14, 0.92);
+      --bg-footer: #05070A;
 
       --border-color: rgba(255, 255, 255, 0.08);
-      --border-card: rgba(255, 255, 255, 0.1);
-      --border-hover: rgba(56, 189, 248, 0.4);
+      --border-card: rgba(255, 255, 255, 0.12);
+      --border-hover: rgba(56, 189, 248, 0.5);
 
       --navy-deep: #0B1120;
       --navy-mid: #0F172A;
@@ -105,7 +107,7 @@
       color: var(--text-main);
       font-family: var(--font-body);
       -webkit-font-smoothing: antialiased;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     body {
@@ -113,10 +115,11 @@
       background: var(--bg-main);
       min-height: 100vh;
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     ::selection {
-      background: rgba(14, 165, 233, 0.25);
+      background: rgba(2, 132, 199, 0.25);
       color: var(--navy-deep);
     }
 
@@ -140,7 +143,7 @@
       padding: 0 1.5rem;
     }
 
-    /* Aurora Grid Background Effect */
+    /* Background Gradients */
     .aurora-bg {
       position: absolute;
       inset: 0;
@@ -172,7 +175,7 @@
     .aurora-2 {
       width: 650px;
       height: 650px;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.3) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.3) 0%, transparent 70%);
       top: 15%;
       right: -200px;
       animation-delay: -6s;
@@ -281,7 +284,7 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-color);
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .header-inner {
@@ -368,7 +371,7 @@
     .nav-item a:hover,
     .nav-item a.active {
       color: var(--text-main);
-      background: rgba(14, 165, 233, 0.1);
+      background: rgba(2, 132, 199, 0.1);
     }
 
     /* Buttons */
@@ -399,7 +402,7 @@
 
     .btn-radial-glow:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.3);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.3);
     }
 
     .btn-secondary-shine {
@@ -437,13 +440,14 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
     }
 
     .theme-toggle-btn:hover {
       border-color: var(--accent-cyan);
       color: var(--accent-cyan);
-      transform: rotate(15deg);
+      transform: rotate(18deg) scale(1.05);
     }
 
     /* ══════════════════════════════════════════════════════════════
@@ -473,8 +477,8 @@
       align-items: center;
       gap: 0.6rem;
       padding: 0.35rem 0.9rem;
-      background: rgba(14, 165, 233, 0.08);
-      border: 1px solid rgba(14, 165, 233, 0.25);
+      background: rgba(2, 132, 199, 0.08);
+      border: 1px solid rgba(2, 132, 199, 0.25);
       border-radius: var(--radius-full);
       font-size: 0.78rem;
       font-weight: 700;
@@ -553,7 +557,7 @@
       letter-spacing: 0.05em;
     }
 
-    /* Live CA Profile Card with Reinstated Image */
+    /* Live CA Profile Card */
     .hero-card {
       position: relative;
       background: var(--bg-card);
@@ -562,7 +566,7 @@
       padding: 1.75rem;
       backdrop-filter: blur(16px);
       box-shadow: var(--shadow-md);
-      transition: border-color 0.3s, transform 0.3s;
+      transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
     }
 
     .card-profile-header {
@@ -632,8 +636,8 @@
     .info-icon {
       width: 32px;
       height: 32px;
-      background: rgba(14, 165, 233, 0.1);
-      border: 1px solid rgba(14, 165, 233, 0.2);
+      background: rgba(2, 132, 199, 0.08);
+      border: 1px solid rgba(2, 132, 199, 0.2);
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
@@ -706,7 +710,7 @@
     .btn-call-action {
       background: rgba(15, 28, 50, 0.06);
       border-color: var(--navy-deep);
-      color: var(--navy-deep);
+      color: var(--text-main);
     }
     [data-theme="dark"] .btn-call-action {
       background: rgba(56, 189, 248, 0.12);
@@ -739,7 +743,7 @@
     }
 
     /* ══════════════════════════════════════════════════════════════
-       PRIMARY SERVICES (INDIAN TAXATION, GST, ITR & AUDIT FRONT & CENTER)
+       PRIMARY SERVICES (INDIAN TAXATION, GST, ITR & AUDIT)
        ══════════════════════════════════════════════════════════════ */
     section {
       padding: 5rem 0;
@@ -837,11 +841,12 @@
       border: 1px solid var(--border-card);
       border-radius: var(--radius-md);
       padding: 2rem;
-      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s, background-color 0.3s;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-shadow: var(--shadow-sm);
     }
 
     .glow-card:hover {
@@ -866,8 +871,8 @@
     .svc-icon-box {
       width: 48px;
       height: 48px;
-      background: rgba(14, 165, 233, 0.08);
-      border: 1px solid rgba(14, 165, 233, 0.2);
+      background: rgba(2, 132, 199, 0.08);
+      border: 1px solid rgba(2, 132, 199, 0.2);
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
@@ -909,10 +914,216 @@
       font-size: 0.7rem;
       font-weight: 600;
       color: var(--text-sub);
-      background: rgba(15, 28, 50, 0.05);
+      background: rgba(15, 28, 50, 0.04);
       border: 1px solid var(--border-color);
       padding: 0.2rem 0.65rem;
       border-radius: var(--radius-full);
+    }
+    [data-theme="dark"] .svc-tag-item {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       AUDIT & CORPORATE SECTION (#audit Anchor Fixed)
+       ══════════════════════════════════════════════════════════════ */
+    .audit-section {
+      background: var(--bg-surface);
+      border-y: 1px solid var(--border-color);
+    }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .audit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      transition: all 0.25s;
+    }
+
+    .audit-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       NEW: ADVANCE TAX & GST COMPLIANCE CALENDAR SECTION
+       ══════════════════════════════════════════════════════════════ */
+    .calendar-section {
+      background: var(--bg-main);
+      border-y: 1px solid var(--border-color);
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .calendar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .calendar-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .calendar-badge-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: rgba(2, 132, 199, 0.08);
+      border: 1px solid rgba(2, 132, 199, 0.2);
+    }
+
+    .due-date-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .due-date-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.85rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+    }
+
+    .date-tag {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      background: var(--navy-deep);
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    [data-theme="dark"] .date-tag {
+      background: var(--accent-cyan);
+      color: #000;
+    }
+
+    .date-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .date-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .cta-banner-card {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-banner-content h3 {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-banner-content p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       INTERACTIVE TAX REGIME CALCULATOR
+       ══════════════════════════════════════════════════════════════ */
+    .calc-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-top: 3rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .calc-results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .calc-res-card {
+      background: var(--bg-main);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .calc-res-card.best {
+      border-color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.06);
+    }
+
+    .calc-res-lbl {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .calc-res-val {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0.4rem 0;
     }
 
     /* ══════════════════════════════════════════════════════════════
@@ -920,7 +1131,6 @@
        ══════════════════════════════════════════════════════════════ */
     .estimator-section {
       background: var(--bg-surface);
-      border-y: 1px solid var(--border-color);
     }
 
     .estimator-card {
@@ -1059,7 +1269,7 @@
       gap: 1rem;
       margin-top: 2.5rem;
       max-width: 860px;
-      margin-x: auto;
+      margin: 0 auto;
     }
 
     details.faq-item {
@@ -1113,8 +1323,13 @@
     }
 
     /* ══════════════════════════════════════════════════════════════
-       SAFE JS FORM & CONFIRMATION MODAL
+       CONTACT FORM & FLOATING WHATSAPP
        ══════════════════════════════════════════════════════════════ */
+    .contact-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1139,19 +1354,19 @@
       margin-bottom: 0.4rem;
     }
 
-    /* Toast Notification */
+    /* Toast Notification Modal */
     .toast-modal {
       display: none;
       position: fixed;
-      bottom: 2rem;
-      right: 2rem;
+      bottom: 2.5rem;
+      right: 2.5rem;
       z-index: 1000;
       background: var(--navy-deep);
       color: #FFFFFF;
       border: 1px solid var(--accent-emerald);
       border-radius: var(--radius-md);
       padding: 1.25rem 1.75rem;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
       max-width: 420px;
       animation: slideUp 0.3s ease;
     }
@@ -1169,11 +1384,44 @@
       margin-bottom: 0.25rem;
     }
 
+    /* Sticky Floating WhatsApp Widget */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      z-index: 999;
+      background: #25D366;
+      color: #FFFFFF;
+      border-radius: var(--radius-full);
+      padding: 0.75rem 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .floating-wa-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+    }
+
+    .floating-wa-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
     /* Footer */
     footer {
-      background: var(--navy-deep);
+      background: var(--bg-footer);
       color: #FFFFFF;
       padding: 4rem 0 2rem;
+      transition: background-color 0.3s;
     }
 
     .footer-bottom {
@@ -1193,6 +1441,9 @@
       .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
       .bento-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .audit-grid { grid-template-columns: repeat(2, 1fr); }
+      .calendar-grid { grid-template-columns: 1fr; }
+      .calc-grid { grid-template-columns: 1fr; }
       .estimator-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
     }
@@ -1201,8 +1452,11 @@
       .top-bar-inner { flex-direction: column; align-items: flex-start; }
       .bento-grid { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; }
+      .audit-grid { grid-template-columns: 1fr; }
       .hero-stats { grid-template-columns: repeat(2, 1fr); }
       .spotlight-nav { display: none; }
+      .floating-wa-btn span { display: none; }
+      .floating-wa-btn { padding: 0.8rem; }
     }
   </style>
 
@@ -1250,7 +1504,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           +91 90710 59696
         </a>
-        <a href="https://wa.me/919071059696" target="_blank" class="top-link" style="color:#25D366">
+        <a href="https://wa.me/919071059696" target="_blank" class="top-link" style="color:#34D399">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.76.465 3.444 1.348 4.914L2 22l5.236-1.323A9.944 9.944 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.944 7.944 0 01-4.076-1.124l-.292-.173-3.107.785.822-2.981-.19-.307A7.944 7.944 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
           Instant WhatsApp
         </a>
@@ -1277,15 +1531,15 @@
           <li class="nav-item"><a href="#home" class="active">Home</a></li>
           <li class="nav-item"><a href="#services">Tax &amp; GST Services</a></li>
           <li class="nav-item"><a href="#audit">Audit &amp; Corporate</a></li>
-          <li class="nav-item"><a href="#us-taxation">US &amp; Expat Tax</a></li>
-          <li class="nav-item"><a href="#estimator">Tax Assistant</a></li>
+          <li class="nav-item"><a href="#calendar-due-dates">Compliance Calendar</a></li>
+          <li class="nav-item"><a href="#calculator">Tax Calculator</a></li>
           <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div style="display:flex;align-items:center;gap:0.75rem">
-        <!-- Light / Dark Mode Toggle Button -->
-        <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <!-- Robust Light / Dark Mode Toggle Button -->
+        <button id="themeBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Light/Dark Mode" aria-label="Toggle Theme">
           <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         </button>
         <a href="#contact" class="btn-radial-glow">Book Consultation</a>
@@ -1340,7 +1594,6 @@
         <div class="hero-card">
           <div class="card-profile-header">
             <div class="profile-avatar">
-              <!-- Reinstated photo of CA Dinesh Jagarlamudi -->
               <img src="dinesh.jpg" alt="CA Dinesh Jagarlamudi">
             </div>
             <div>
@@ -1388,21 +1641,21 @@
     </div>
   </section>
 
-  <!-- ═══ SERVICES BENTO GRID (INDIAN TAX, GST, ITR & AUDIT FRONT & CENTER) ═══ -->
+  <!-- ═══ SERVICES BENTO GRID (INDIAN TAX, GST, ITR & AUDIT) ═══ -->
   <section id="services">
     <div class="container">
       <div class="services-header">
         <div>
-          <div class="sec-kicker"><span class="sec-kicker-line"></span> Core Expertise</div>
-          <h2 class="sec-title">Comprehensive CA Services for Every Need</h2>
+          <div class="sec-kicker"><span class="sec-kicker-line"></span> Core Practice Areas</div>
+          <h2 class="sec-title">Comprehensive Taxation &amp; Advisory Services</h2>
         </div>
 
         <div class="filter-tabs">
-          <button class="filter-btn active" onclick="filterServices('all')">All Services</button>
-          <button class="filter-btn" onclick="filterServices('in-tax')">🇮🇳 Income Tax &amp; ITR</button>
-          <button class="filter-btn" onclick="filterServices('gst')">📊 GST &amp; TDS</button>
-          <button class="filter-btn" onclick="filterServices('audit')">🏢 Audit &amp; ROC</button>
-          <button class="filter-btn" onclick="filterServices('us-tax')">🌐 US &amp; Expat Tax</button>
+          <button class="filter-btn active" onclick="filterServices('all', this)">All Services</button>
+          <button class="filter-btn" onclick="filterServices('in-tax', this)">🇮🇳 Income Tax &amp; ITR</button>
+          <button class="filter-btn" onclick="filterServices('gst', this)">📊 GST &amp; TDS</button>
+          <button class="filter-btn" onclick="filterServices('audit', this)">🏢 Audit &amp; ROC</button>
+          <button class="filter-btn" onclick="filterServices('us-tax', this)">🌐 US &amp; Expat Tax</button>
         </div>
       </div>
 
@@ -1415,12 +1668,12 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </div>
             <h3 class="svc-card-title">Income Tax Filing (ITR 1-7)</h3>
-            <p class="svc-card-desc">Accurate and timely ITR filing for salaried individuals, freelancers, HUFs, capital gains, and business owners. We maximize legal tax deductions.</p>
+            <p class="svc-card-desc">Accurate and timely ITR filing for salaried individuals, freelancers, HUFs, capital gains, and business owners. We maximize legal tax deductions under Old &amp; New Tax Regimes.</p>
           </div>
           <div class="svc-tags-wrap">
             <span class="svc-tag-item">Salaried &amp; Business</span>
             <span class="svc-tag-item">Capital Gains</span>
-            <span class="svc-tag-item">80C/80D</span>
+            <span class="svc-tag-item">80C / 80D / NPS</span>
           </div>
         </div>
 
@@ -1432,12 +1685,12 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <h3 class="svc-card-title">GST Registration &amp; Filing</h3>
-            <p class="svc-card-desc">End-to-end GST management — registration, monthly GSTR-1 &amp; GSTR-3B filings, annual GSTR-9 returns, ITC reconciliation, and GST audit support.</p>
+            <p class="svc-card-desc">End-to-end GST management — new GSTIN registration, monthly GSTR-1 &amp; GSTR-3B filings, annual GSTR-9 returns, GSTR-2B Input Tax Credit (ITC) reconciliation, and GST audit support.</p>
           </div>
           <div class="svc-tags-wrap">
             <span class="svc-tag-item">GSTN Registration</span>
             <span class="svc-tag-item">GSTR-1 &amp; 3B</span>
-            <span class="svc-tag-item">ITC Claim</span>
+            <span class="svc-tag-item">GSTR-2B ITC Claim</span>
           </div>
         </div>
 
@@ -1449,11 +1702,11 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
             </div>
             <h3 class="svc-card-title">TDS Filing &amp; Form 16</h3>
-            <p class="svc-card-desc">TDS calculation, monthly challan payments, quarterly return filing (24Q, 26Q, 27Q), and Form 16/16A generation for employers and business owners.</p>
+            <p class="svc-card-desc">TDS calculation, monthly challan payments, quarterly return filing (24Q, 26Q, 27Q), TRACES correction statements, and Form 16/16A generation for employers and businesses.</p>
           </div>
           <div class="svc-tags-wrap">
             <span class="svc-tag-item">Quarterly 24Q/26Q</span>
-            <span class="svc-tag-item">Form 16</span>
+            <span class="svc-tag-item">Form 16 / 16A</span>
             <span class="svc-tag-item">TDS Challan</span>
           </div>
         </div>
@@ -1461,12 +1714,12 @@
         <!-- Service 4: Audit & Assurance -->
         <div class="glow-card" data-category="audit">
           <div class="glow-card-top">
-            <div class="svc-num">04 / AUDIT</div>
+            <div class="svc-num">04 / AUDIT &amp; ASSURANCE</div>
             <div class="svc-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <h3 class="svc-card-title">Statutory &amp; Tax Audit (3CD)</h3>
-            <p class="svc-card-desc">Independent statutory audits, Tax Audits under Section 44AB, Form 3CA/3CB/3CD filings, internal audits, and bank audits conducted with technical rigour.</p>
+            <p class="svc-card-desc">Independent statutory audits, Tax Audits under Section 44AB, Form 3CA/3CB/3CD filings, internal audits, and bank audits conducted with technical rigour and ICAI UDIN compliance.</p>
           </div>
           <div class="svc-tags-wrap">
             <span class="svc-tag-item">Tax Audit 3CD</span>
@@ -1482,25 +1735,25 @@
             <div class="svc-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
-            <h3 class="svc-card-title">Notice &amp; Litigation Support</h3>
-            <p class="svc-card-desc">Expert representation for Income Tax notices (143(1), 142(1), 148), scrutiny assessments, CIT (Appeals), and ITAT litigation proceedings.</p>
+            <h3 class="svc-card-title">Notice &amp; Assessment Reply</h3>
+            <p class="svc-card-desc">Expert drafting and representation for Income Tax notices (143(1), 142(1), 148), scrutiny assessments, faceless appeals, CIT (Appeals), and ITAT litigation proceedings.</p>
           </div>
           <div class="svc-tags-wrap">
             <span class="svc-tag-item">IT Notice Reply</span>
-            <span class="svc-tag-item">Scrutiny</span>
-            <span class="svc-tag-item">ITAT Representation</span>
+            <span class="svc-tag-item">Scrutiny 143(3)</span>
+            <span class="svc-tag-item">CIT Appeals</span>
           </div>
         </div>
 
-        <!-- Service 6: Startup & Corporate Advisory -->
+        <!-- Service 6: Corporate & ROC -->
         <div class="glow-card" data-category="audit">
           <div class="glow-card-top">
-            <div class="svc-num">06 / CORPORATE</div>
+            <div class="svc-num">06 / CORPORATE &amp; ROC</div>
             <div class="svc-icon-box">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             </div>
             <h3 class="svc-card-title">Company Incorporation &amp; ROC</h3>
-            <p class="svc-card-desc">Pvt Ltd &amp; LLP incorporation, MSME registration, Startup India recognition, annual ROC filing (AOC-4, MGT-7), bookkeeping, and CFO advisory.</p>
+            <p class="svc-card-desc">Pvt Ltd &amp; LLP incorporation, MSME registration, Startup India recognition, annual ROC filings (AOC-4, MGT-7), bookkeeping, and Virtual CFO advisory.</p>
           </div>
           <div class="svc-tags-wrap">
             <span class="svc-tag-item">Pvt Ltd / LLP</span>
@@ -1509,7 +1762,7 @@
           </div>
         </div>
 
-        <!-- Service 7: US & Cross-Border Tax (Secondary / Specialized) -->
+        <!-- Service 7: US & Cross-Border Tax -->
         <div class="glow-card" data-category="us-tax">
           <div class="glow-card-top">
             <div class="svc-num">07 / CROSS-BORDER</div>
@@ -1529,10 +1782,161 @@
     </div>
   </section>
 
-  <!-- ═══ CROSS-BORDER & US TAX SECTION ═══ -->
-  <section id="us-taxation" style="background:var(--bg-surface);border-y:1px solid var(--border-color)">
+  <!-- ═══ AUDIT & CORPORATE SECTION (#audit Anchor Fixed) ═══ -->
+  <section id="audit" class="audit-section">
     <div class="container">
-      <div class="sec-kicker"><span class="sec-kicker-line"></span> Specialized Expat &amp; NRI Service</div>
+      <div class="sec-kicker"><span class="sec-kicker-line"></span> Audit &amp; Assurance Services</div>
+      <h2 class="sec-title">Statutory Audit, Tax Audit &amp; ROC Compliance</h2>
+      <p class="sec-desc">
+        Rigorous audit and corporate compliance services designed to protect your business, satisfy bank covenants, and ensure full alignment with Indian Companies Act &amp; Income Tax laws.
+      </p>
+
+      <div class="audit-grid">
+        <div class="audit-card">
+          <div style="font-size:1.3rem;font-weight:700;margin-bottom:0.6rem">📋 Tax Audit u/s 44AB (Form 3CD)</div>
+          <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65">
+            Mandatory Tax Audits for businesses with turnover exceeding ₹1 Cr (or ₹10 Cr for digital transactions) and professionals with gross receipts over ₹50 Lakhs. Certified with ICAI UDIN.
+          </p>
+        </div>
+        <div class="audit-card">
+          <div style="font-size:1.3rem;font-weight:700;margin-bottom:0.6rem">🏢 Statutory Company Audit</div>
+          <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65">
+            Independent statutory audit of financial statements for Private Limited Companies and LLPs as mandated by the Ministry of Corporate Affairs (MCA) under Companies Act 2013.
+          </p>
+        </div>
+        <div class="audit-card">
+          <div style="font-size:1.3rem;font-weight:700;margin-bottom:0.6rem">📊 ROC Annual Filing (AOC-4 &amp; MGT-7)</div>
+          <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65">
+            End-to-end ROC compliance — preparation and filing of Annual Balance Sheet (AOC-4), Annual Return (MGT-7/7A), Director KYC (DIR-3 KYC), and secretarial board resolutions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ADVANCE TAX & GST COMPLIANCE CALENDAR SECTION ═══ -->
+  <section id="calendar-due-dates" class="calendar-section">
+    <div class="container">
+      <div style="text-align:center;max-width:720px;margin:0 auto">
+        <div class="sec-kicker" style="justify-content:center"><span class="sec-kicker-line"></span> Statutory Compliance Calendar</div>
+        <h2 class="sec-title">Advance Tax &amp; GST Compliance Calendar</h2>
+        <p class="sec-desc" style="margin:0 auto">
+          Business owners and salaried individuals frequently miss advance tax quarterly deadlines and monthly GST due dates, leading to interest u/s 234B/234C and late fees. Keep your compliance on track.
+        </p>
+      </div>
+
+      <div class="calendar-grid">
+        <!-- Card 1: Quarterly Advance Tax Deadlines -->
+        <div class="calendar-card">
+          <div>
+            <div class="calendar-card-header">
+              <div class="calendar-badge-icon">🗓️</div>
+              <div>
+                <h3 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--text-main)">Quarterly Advance Tax Schedule (u/s 208/211)</h3>
+                <p style="font-size:0.8rem;color:var(--text-muted)">Applicable if total estimated annual tax liability exceeds ₹10,000</p>
+              </div>
+            </div>
+
+            <ul class="due-date-list">
+              <li class="due-date-item">
+                <span class="date-tag">June 15</span>
+                <div>
+                  <div class="date-title">Q1 Advance Tax Due (15%)</div>
+                  <div class="date-sub">Pay at least 15% of estimated net income tax liability for the financial year.</div>
+                </div>
+              </li>
+              <li class="due-date-item">
+                <span class="date-tag">Sept 15</span>
+                <div>
+                  <div class="date-title">Q2 Advance Tax Due (45%)</div>
+                  <div class="date-sub">Pay cumulative 45% of total estimated tax to avoid Sec 234C interest.</div>
+                </div>
+              </li>
+              <li class="due-date-item">
+                <span class="date-tag">Dec 15</span>
+                <div>
+                  <div class="date-title">Q3 Advance Tax Due (75%)</div>
+                  <div class="date-sub">Pay cumulative 75% of total estimated tax liability.</div>
+                </div>
+              </li>
+              <li class="due-date-item">
+                <span class="date-tag">March 15</span>
+                <div>
+                  <div class="date-title">Q4 Advance Tax Due (100%)</div>
+                  <div class="date-sub">Pay 100% of estimated tax before fiscal year close (31st March).</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2: Monthly GST & TDS Deadlines -->
+        <div class="calendar-card">
+          <div>
+            <div class="calendar-card-header">
+              <div class="calendar-badge-icon">📊</div>
+              <div>
+                <h3 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--text-main)">Monthly GST, TDS &amp; Annual Deadlines</h3>
+                <p style="font-size:0.8rem;color:var(--text-muted)">Recurring statutory filings for businesses &amp; employers</p>
+              </div>
+            </div>
+
+            <ul class="due-date-list">
+              <li class="due-date-item">
+                <span class="date-tag">7th Monthly</span>
+                <div>
+                  <div class="date-title">TDS Payment Deposit (Form 281)</div>
+                  <div class="date-sub">Deposit TDS deducted in previous month to avoiding 1.5%/month interest.</div>
+                </div>
+              </li>
+              <li class="due-date-item">
+                <span class="date-tag">11th Monthly</span>
+                <div>
+                  <div class="date-title">GSTR-1 Outward Supply Return</div>
+                  <div class="date-sub">File monthly sales details for B2B invoice reflection in buyers' GSTR-2B.</div>
+                </div>
+              </li>
+              <li class="due-date-item">
+                <span class="date-tag">20th Monthly</span>
+                <div>
+                  <div class="date-title">GSTR-3B Summary &amp; Tax Payment</div>
+                  <div class="date-sub">Reconcile GSTR-2B ITC, pay net GST tax liability, and submit summary return.</div>
+                </div>
+              </li>
+              <li class="due-date-item">
+                <span class="date-tag">31st July</span>
+                <div>
+                  <div class="date-title">Annual ITR Filing (Non-Audit Cases)</div>
+                  <div class="date-sub">Income tax return deadline for salaried professionals and non-audit businesses.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead Capture & Reminder Download Banner -->
+      <div class="cta-banner-card">
+        <div class="cta-banner-content">
+          <h3>Get Automatic WhatsApp Due Date Reminders</h3>
+          <p>Subscribe to CA Dinesh's compliance alert service to receive early notifications before every Advance Tax, GST, and ITR deadline.</p>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="https://wa.me/919071059696?text=Hi%20CA%20Dinesh,%20please%20subscribe%20me%20to%20your%20Tax%20and%20GST%20Due%20Date%20Reminder%20list." target="_blank" class="btn-radial-glow" style="background:#25D366;color:#FFF;border:none">
+            Subscribe on WhatsApp
+          </a>
+          <button onclick="window.print()" class="btn-secondary-shine" style="background:rgba(255,255,255,0.15);color:#FFF;border-color:rgba(255,255,255,0.3)">
+            🖨️ Print / Save PDF Calendar
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ US & CROSS-BORDER TAXATION ═══ -->
+  <section id="us-taxation">
+    <div class="container">
+      <div class="sec-kicker"><span class="sec-kicker-line"></span> Specialized Expat &amp; NRI Practice</div>
       <h2 class="sec-title">US &amp; Cross-Border Taxation Practice</h2>
       <p class="sec-desc">
         Specialized tax advice for US Expats, H1B/L1 returnees, NRIs, and tech professionals with foreign income, RSUs, and global assets.
@@ -1540,13 +1944,13 @@
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem">
         <div class="why-card">
-          <div style="font-size:1.5rem;margin-bottom:0.75rem">🇺🇸 IRS Form 1040 &amp; FBAR Compliance</div>
+          <div style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem">🇺🇸 IRS Form 1040 &amp; FBAR Compliance</div>
           <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65">
             Preparation of US Federal/State tax returns and mandatory FinCEN Form 114 (FBAR) for US persons holding Indian bank accounts, mutual funds, or properties.
           </p>
         </div>
         <div class="why-card">
-          <div style="font-size:1.5rem;margin-bottom:0.75rem">🌐 DTAA Relief &amp; Form 15CA / 15CB</div>
+          <div style="font-size:1.4rem;font-weight:700;margin-bottom:0.75rem">🌐 DTAA Relief &amp; Form 15CA / 15CB</div>
           <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.65">
             Eliminate double taxation under Article 25/26 of US-India DTAA using Foreign Tax Credits (Form 1116) and obtain Form 15CA/15CB certificates for outward fund transfers.
           </p>
@@ -1555,7 +1959,57 @@
     </div>
   </section>
 
-  <!-- ═══ INTERACTIVE TAX ESTIMATOR ═══ -->
+  <!-- ═══ INTERACTIVE TAX REGIME CALCULATOR ═══ -->
+  <section id="calculator" style="background:var(--bg-surface);border-y:1px solid var(--border-color)">
+    <div class="container">
+      <div style="text-align:center;max-width:650px;margin:0 auto">
+        <div class="sec-kicker" style="justify-content:center"><span class="sec-kicker-line"></span> Tax Planning Tool</div>
+        <h2 class="sec-title">Indian Income Tax Calculator (FY 2024-25 / AY 2025-26)</h2>
+        <p class="sec-desc" style="margin:0 auto">
+          Compare estimated tax liability under the New Tax Regime (u/s 115BAC) vs Old Tax Regime instantly.
+        </p>
+      </div>
+
+      <div class="calc-box">
+        <div class="calc-grid">
+          <div>
+            <div class="form-group">
+              <label>Annual Gross Salary / Taxable Income (₹)</label>
+              <input type="number" class="form-input" id="calcIncome" value="1200000" placeholder="e.g. 1200000" oninput="calculateTax()">
+            </div>
+
+            <div class="form-group">
+              <label>Total Old Regime Deductions (80C, 80D, HRA) (₹)</label>
+              <input type="number" class="form-input" id="calcDeduction" value="200000" placeholder="e.g. 200000" oninput="calculateTax()">
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:0.85rem;font-weight:700;color:var(--text-sub);text-transform:uppercase;letter-spacing:0.05em">Estimated Tax Comparison:</div>
+            <div class="calc-results-grid">
+              <div class="calc-res-card" id="oldTaxCard">
+                <div class="calc-res-lbl">Old Regime Tax</div>
+                <div class="calc-res-val" id="oldTaxVal">₹ 1,17,000</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Incl. 4% Cess</div>
+              </div>
+
+              <div class="calc-res-card best" id="newTaxCard">
+                <div class="calc-res-lbl">New Regime Tax ★</div>
+                <div class="calc-res-val" id="newTaxVal" style="color:var(--accent-emerald)">₹ 85,800</div>
+                <div style="font-size:0.75rem;color:var(--accent-emerald);font-weight:600" id="savingsTag">Saves ₹ 31,200!</div>
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem;text-align:center">
+              <a href="#contact" class="btn-radial-glow" style="width:100%">Get Personal Tax Optimization Advice</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTERACTIVE TAX ESTIMATOR & DOCUMENT CHECKLIST ═══ -->
   <section id="estimator" class="estimator-section">
     <div class="container">
       <div class="estimator-card">
@@ -1690,15 +2144,15 @@
     </div>
   </section>
 
-  <!-- ═══ SAFE CONTACT FORM (CLIENT-SIDE JS INTERCEPTION TO AVOID BROWSER AUTOFILL & MAITO SECURITY WARNINGS) ═══ -->
-  <section id="contact" style="background:var(--navy-deep);color:#FFFFFF">
+  <!-- ═══ SAFE CONTACT FORM ═══ -->
+  <section id="contact" class="contact-section">
     <div class="container">
       <div class="sec-kicker"><span class="sec-kicker-line"></span> Get In Touch</div>
-      <h2 class="sec-title" style="color:#FFFFFF">Schedule a Consultation with CA Dinesh</h2>
+      <h2 class="sec-title">Schedule a Consultation with CA Dinesh</h2>
 
       <div class="contact-grid">
         <!-- Form with Client-Side JS Interception -->
-        <div class="contact-form-card" style="background:var(--bg-surface);color:var(--text-main)">
+        <div class="contact-form-card">
           <h3>Send Us a Direct Message</h3>
           <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1.5rem">
             Fill out your details below to request a tax or financial consultation.
@@ -1737,7 +2191,7 @@
         </div>
 
         <!-- Contact Info Card -->
-        <div class="hero-card" style="background:var(--bg-surface);color:var(--text-main)">
+        <div class="hero-card">
           <h3 style="font-family:var(--font-heading);font-size:1.4rem;color:var(--text-main);margin-bottom:1rem">J Dinesh &amp; Co</h3>
           <p style="font-size:0.92rem;color:var(--text-muted);margin-bottom:1.5rem">
             Chartered Accountants · Bengaluru · Pan-India &amp; Global Remote Service
@@ -1793,6 +2247,12 @@
     <div style="font-size:0.88rem" id="toastMsg">Thank you! Your consultation request has been submitted. We are opening WhatsApp to connect with CA Dinesh directly.</div>
   </div>
 
+  <!-- Sticky Floating WhatsApp Badge -->
+  <a href="https://wa.me/919071059696" target="_blank" class="floating-wa-btn" title="Chat with CA Dinesh on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.76.465 3.444 1.348 4.914L2 22l5.236-1.323A9.944 9.944 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.944 7.944 0 01-4.076-1.124l-.292-.173-3.107.785.822-2.981-.19-.307A7.944 7.944 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+    <span>Instant WhatsApp CA Consultation</span>
+  </a>
+
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="container">
@@ -1811,6 +2271,7 @@
           <a href="#home" style="color:rgba(255,255,255,0.7);text-decoration:none">Home</a>
           <a href="#services" style="color:rgba(255,255,255,0.7);text-decoration:none">Services</a>
           <a href="#audit" style="color:rgba(255,255,255,0.7);text-decoration:none">Audit</a>
+          <a href="#calendar-due-dates" style="color:rgba(255,255,255,0.7);text-decoration:none">Calendar</a>
           <a href="#contact" style="color:rgba(255,255,255,0.7);text-decoration:none">Contact</a>
         </div>
       </div>
@@ -1823,18 +2284,20 @@
   </footer>
 
   <!-- ══════════════════════════════════════════════════════════════
-       JAVASCRIPT SCRIPTS: SAFE FORM SUBMISSION & THEME SWITCHER
+       JAVASCRIPT SCRIPTS
        ══════════════════════════════════════════════════════════════ */
   <script>
-    // Theme Switcher Logic (Light & Dark)
+    // Robust Light / Dark Theme Switcher Logic
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem('ca_theme', theme);
       const icon = document.getElementById('themeIcon');
-      if (theme === 'dark') {
-        icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-      } else {
-        icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+      if (icon) {
+        if (theme === 'dark') {
+          icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>';
+        } else {
+          icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+        }
       }
     }
 
@@ -1848,7 +2311,58 @@
     const savedTheme = localStorage.getItem('ca_theme') || 'light';
     setTheme(savedTheme);
 
-    // Safe Form Submission Handler (Prevents browser Security / Action Warnings)
+    // Income Tax Old vs New Regime Calculator
+    function calculateTax() {
+      const income = parseFloat(document.getElementById('calcIncome').value) || 0;
+      const deduction = parseFloat(document.getElementById('calcDeduction').value) || 0;
+
+      const stdDedNew = 75000;
+      const taxableNew = Math.max(0, income - stdDedNew);
+      let taxNew = 0;
+      if (taxableNew <= 300000) taxNew = 0;
+      else if (taxableNew <= 700000) taxNew = (taxableNew - 300000) * 0.05;
+      else if (taxableNew <= 1000000) taxNew = 20000 + (taxableNew - 700000) * 0.10;
+      else if (taxableNew <= 1200000) taxNew = 50000 + (taxableNew - 1000000) * 0.15;
+      else if (taxableNew <= 1500000) taxNew = 80000 + (taxableNew - 1200000) * 0.20;
+      else taxNew = 140000 + (taxableNew - 1500000) * 0.30;
+      
+      if (taxableNew <= 700000) taxNew = 0;
+      const totalNewTax = Math.round(taxNew * 1.04);
+
+      const stdDedOld = 50000;
+      const taxableOld = Math.max(0, income - stdDedOld - deduction);
+      let taxOld = 0;
+      if (taxableOld <= 250000) taxOld = 0;
+      else if (taxableOld <= 500000) taxOld = (taxableOld - 250000) * 0.05;
+      else if (taxableOld <= 1000000) taxOld = 12500 + (taxableOld - 500000) * 0.20;
+      else taxOld = 112500 + (taxableOld - 1000000) * 0.30;
+
+      if (taxableOld <= 500000) taxOld = 0;
+      const totalOldTax = Math.round(taxOld * 1.04);
+
+      document.getElementById('oldTaxVal').innerText = '₹ ' + totalOldTax.toLocaleString('en-IN');
+      document.getElementById('newTaxVal').innerText = '₹ ' + totalNewTax.toLocaleString('en-IN');
+
+      const oldCard = document.getElementById('oldTaxCard');
+      const newCard = document.getElementById('newTaxCard');
+      const tag = document.getElementById('savingsTag');
+
+      if (totalNewTax < totalOldTax) {
+        newCard.className = 'calc-res-card best';
+        oldCard.className = 'calc-res-card';
+        tag.innerText = 'Saves ₹ ' + (totalOldTax - totalNewTax).toLocaleString('en-IN') + ' in New Regime!';
+      } else if (totalOldTax < totalNewTax) {
+        oldCard.className = 'calc-res-card best';
+        newCard.className = 'calc-res-card';
+        tag.innerText = 'Saves ₹ ' + (totalNewTax - totalOldTax).toLocaleString('en-IN') + ' in Old Regime!';
+      } else {
+        newCard.className = 'calc-res-card';
+        oldCard.className = 'calc-res-card';
+        tag.innerText = 'Equal Tax in both regimes';
+      }
+    }
+
+    // Safe Form Submission Handler
     function handleConsultationSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('clientName').value;
@@ -1856,25 +2370,24 @@
       const service = document.getElementById('clientService').value;
       const message = document.getElementById('clientMessage').value;
 
-      // Format WhatsApp Message
       const waText = `Hello CA Dinesh,%0A%0AI would like to schedule a consultation.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service Required:* ${encodeURIComponent(service)}%0A*Notes:* ${encodeURIComponent(message)}`;
       const waUrl = `https://wa.me/919071059696?text=${waText}`;
 
-      // Show Toast Notification
       const toast = document.getElementById('toastModal');
       toast.style.display = 'block';
 
-      // Redirect to WhatsApp after brief pause
       setTimeout(() => {
         window.open(waUrl, '_blank');
       }, 1000);
     }
 
     // Service Filter Function
-    function filterServices(category) {
+    function filterServices(category, btnElement) {
       const tabs = document.querySelectorAll('.filter-btn');
       tabs.forEach(tab => tab.classList.remove('active'));
-      event.target.classList.add('active');
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
 
       const cards = document.querySelectorAll('.glow-card');
       cards.forEach(card => {
@@ -1923,7 +2436,7 @@
 
     // Card Mouse Follow Glow
     document.addEventListener('mousemove', (e) => {
-      document.querySelectorAll('.glow-card, .hero-card, .why-card').forEach(card => {
+      document.querySelectorAll('.glow-card, .hero-card, .why-card, .audit-card, .calendar-card').forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -1931,6 +2444,9 @@
         card.style.setProperty('--mouse-y', `${y}px`);
       });
     });
+
+    // Run initial tax calculation
+    calculateTax();
   </script>
 </body>
 </html>
