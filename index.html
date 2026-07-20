@@ -1585,7 +1585,7 @@
         <button id="themeBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Light/Dark Mode" aria-label="Toggle Theme">
           <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         </button>
-        <a href="#contact" class="btn-radial-glow">Book Consultation</a>
+        <button type="button" onclick="handleConsultationSubmit(event)" class="btn-radial-glow">Book Consultation</button>
       </div>
     </div>
   </header>
@@ -1606,10 +1606,10 @@
         </p>
         
         <div class="hero-actions">
-          <a href="#contact" class="btn-radial-glow">
+          <button type="button" onclick="handleConsultationSubmit(event)" class="btn-radial-glow">
             Schedule a Consultation
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
+          </button>
           <!-- Prominent Email Direct Option -->
           <a href="mailto:cadineshjagarlamudi@gmail.com?subject=Tax%20Filing%20Request%20%26%20Documents%20-%20J%20Dinesh%20%26%20Co&amp;body=Hello%20CA%20Dinesh,%0A%0AI%20would%20like%20to%20request%20tax%20filing%20services%20and%20attach%20my%20tax%20documents%20(Form%2016%20/%20Bank%20Statements).%0A%0AName:%20%0AMobile:%20%0AService:%20" class="btn-email-direct">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -2023,12 +2023,12 @@
           <div>
             <div class="form-group">
               <label>Annual Gross Salary / Taxable Income (₹)</label>
-              <input type="number" class="form-input" id="calcIncome" value="1200000" placeholder="e.g. 1200000">
+              <input type="number" class="form-input" id="calcIncome" value="1200000" placeholder="e.g. 1200000" oninput="calculateTax()" onchange="calculateTax()" onkeyup="calculateTax()">
             </div>
 
             <div class="form-group">
               <label>Total Old Regime Deductions (80C, 80D, HRA) (₹)</label>
-              <input type="number" class="form-input" id="calcDeduction" value="200000" placeholder="e.g. 200000">
+              <input type="number" class="form-input" id="calcDeduction" value="200000" placeholder="e.g. 200000" oninput="calculateTax()" onchange="calculateTax()" onkeyup="calculateTax()">
             </div>
           </div>
 
@@ -2049,7 +2049,7 @@
             </div>
 
             <div style="margin-top:1.5rem;text-align:center">
-              <a href="#contact" class="btn-radial-glow" style="width:100%">Get Personal Tax Optimization Advice</a>
+              <button type="button" onclick="redirectCalcToWhatsApp()" class="btn-radial-glow" style="width:100%">Get Personal Tax Optimization Advice</button>
             </div>
           </div>
         </div>
@@ -2072,7 +2072,7 @@
             <form style="margin-top:2rem" onsubmit="event.preventDefault()">
               <div class="form-group">
                 <label>Select Your Profile Category</label>
-                <select class="form-select" id="profileSelect">
+                <select class="form-select" id="profileSelect" onchange="updateEstimator()">
                   <option value="salaried-in">Salaried Professional (India)</option>
                   <option value="business-msme">Business / MSME Owner / Professional</option>
                   <option value="nri-investor">NRI with Indian Income / Property Sale</option>
@@ -2082,7 +2082,7 @@
 
               <div class="form-group">
                 <label>Primary Service Requirement</label>
-                <select class="form-select" id="requirementSelect">
+                <select class="form-select" id="requirementSelect" onchange="updateEstimator()">
                   <option value="itr">Annual Income Tax Return (ITR 1-7)</option>
                   <option value="gst-tds">GST Registration &amp; Filing / TDS</option>
                   <option value="audit-roc">Tax Audit 3CD &amp; ROC Filing</option>
@@ -2104,8 +2104,8 @@
               <li>Investment Proofs (80C / 80D / LIC / NPS)</li>
               <li>Bank Interest Certificates</li>
             </ul>
-            <!-- Routing to Contact Form with Auto-Selection -->
-            <button onclick="requestConsultationForProfile()" class="btn-radial-glow" style="width:100%">
+            <!-- Routing to Contact Form & Direct WhatsApp -->
+            <button type="button" onclick="requestConsultationForProfile()" class="btn-radial-glow" style="width:100%">
               Request Consultation for This Profile
             </button>
           </div>
@@ -2238,7 +2238,7 @@
               <textarea class="form-input" id="clientMessage" style="min-height:90px;resize:vertical" placeholder="Describe your tax requirement or request a callback..."></textarea>
             </div>
 
-            <button type="submit" class="btn-radial-glow" style="width:100%">Submit Consultation Request</button>
+            <button type="button" onclick="handleConsultationSubmit(event)" class="btn-radial-glow" style="width:100%">Submit Consultation Request</button>
           </form>
         </div>
 
@@ -2587,7 +2587,7 @@ END:VCALENDAR`;
       }
     }
 
-    // 4. Dynamic Tax Estimator & Document Checklist Logic
+    // 4. Dynamic Tax Estimator & Document Checklist Logic (All 16 Profile x Requirement Matrix)
     const estimatorData = {
       'salaried-in-itr': {
         title: 'Salaried Professional — Income Tax Return (ITR-1 / ITR-2)',
@@ -2599,6 +2599,16 @@ END:VCALENDAR`;
         desc: 'TDS credit verification, excess TDS refund claims, and stock/mutual fund capital gains tax computation.',
         docs: ['Form 26AS & AIS Report', 'Demat / Capital Gains Statements', 'Bank Account Details for Refund']
       },
+      'salaried-in-audit-roc': {
+        title: 'Salaried Professional — Special Tax Audit / Capital Gains Verification',
+        desc: 'Audit of high-volume derivative/F&O trading losses or significant capital gains transactions.',
+        docs: ['F&O Tax Audit Statement', 'Demat Contract Notes', 'Bank Statements']
+      },
+      'salaried-in-fbar-dtaa': {
+        title: 'Salaried Expat — Foreign Asset & ESOP Compliance',
+        desc: 'Reporting US RSUs, ESPPs, foreign bank accounts, and Schedule FA filing in Indian ITR.',
+        docs: ['Foreign Stock Vesting Reports', 'W-2 / 1099 Forms', 'Schedule FA Disclosure Sheet']
+      },
       'business-msme-itr': {
         title: 'Business & MSME — Business ITR (ITR-3 / ITR-4)',
         desc: 'Presumptive tax u/s 44AD/44ADA or regular business ITR filing with profit & loss calculation and depreciation schedules.',
@@ -2607,22 +2617,52 @@ END:VCALENDAR`;
       'business-msme-gst-tds': {
         title: 'Business & MSME — GST Returns & TDS Filing',
         desc: 'Monthly GSTR-1, GSTR-3B, GSTR-2B Input Tax Credit (ITC) reconciliation, and quarterly 24Q/26Q TDS returns.',
-        docs: ['Sales & Purchase Register', 'GSTR-2B Recon Sheet', 'TDS Challan Receipts']
+        docs: ['Sales & Purchase Register', 'GSTR-2B Recon Sheet', 'TDS Challan Receipts', 'Vendor GSTIN Verification']
       },
       'business-msme-audit-roc': {
         title: 'Business & MSME — Tax Audit (3CD) & ROC Compliance',
         desc: 'Mandatory Tax Audit under Section 44AB (Form 3CD) and annual MCA ROC filings (AOC-4, MGT-7/7A) certified with ICAI UDIN.',
-        docs: ['Audited Financial Statements', '3CD Audit Checklist Data', 'DIR-3 KYC Details']
+        docs: ['Audited Financial Statements', '3CD Audit Checklist Data', 'DIR-3 KYC Details', 'Board Resolutions']
+      },
+      'business-msme-fbar-dtaa': {
+        title: 'Business & MSME — Cross-Border Payments & Form 15CA/15CB',
+        desc: 'Certification for foreign software payments, royalty transfers, and international vendor remittances.',
+        docs: ['Foreign Vendor Invoice', 'Agreement Copy', 'Form 15CB CA Certificate Data']
       },
       'nri-investor-itr': {
         title: 'NRI & Foreign Investor — Indian ITR Filing',
         desc: 'Specialized NRI ITR filing for rental income in India, property sale capital gains, and NRE/NRO interest tax exemption.',
         docs: ['NRO & NRE Bank Statements', 'Property Sale/Rent Agreements', 'TDS Certificates u/s 195']
       },
+      'nri-investor-gst-tds': {
+        title: 'NRI & Foreign Investor — TDS Refund u/s 195',
+        desc: 'Claiming excess 20%-30% TDS deducted on NRI property sale or interest income in India.',
+        docs: ['Form 16A / TDS Certificates', 'Lower TDS Certificate (Form 13)', 'NRO Bank Statement']
+      },
+      'nri-investor-audit-roc': {
+        title: 'NRI & Foreign Investor — Indian Entity Audit & FEMA',
+        desc: 'Statutory audit of Indian subsidiaries and LLPs owned by NRIs, along with RBI FC-GPR/FC-TRS filings.',
+        docs: ['Financial Accounts', 'FEMA Compliance Records', 'RBI Inward Remittance Certificate']
+      },
       'nri-investor-fbar-dtaa': {
         title: 'NRI & Foreign Investor — DTAA Relief & Form 15CA / 15CB',
         desc: 'DTAA tax credit claims under Article 25 to avoid double tax, and Chartered Accountant 15CB certificate for funds repatriation.',
         docs: ['Foreign Tax Paid Proofs', 'Form 15CB Transfer Data', 'Passport & PAN Copies']
+      },
+      'us-expat-itr': {
+        title: 'US Expat in India — Indian Income Tax Return',
+        desc: 'Dual-resident income tax filing in India with foreign income disclosures and relief under Sec 90/91.',
+        docs: ['Indian Salary / Business Accounts', 'US Income Summaries', 'Form 67 for FTC']
+      },
+      'us-expat-gst-tds': {
+        title: 'US Expat / Freelancer — GST LUT & Export Filing',
+        desc: 'GST Letter of Undertaking (LUT) filing for zero-rated service exports to US clients without paying 18% GST.',
+        docs: ['Foreign Inward Remittance Certificate (FIRC)', 'GST LUT Registration', 'Export Invoices']
+      },
+      'us-expat-audit-roc': {
+        title: 'US Subsidiary in India — Audit & Transfer Pricing',
+        desc: 'Statutory audit and Form 3CEB Transfer Pricing documentation for US parent company subsidiaries in India.',
+        docs: ['Intercompany Agreements', 'Audited Financial Statements', 'Transfer Pricing Study Report']
       },
       'us-expat-fbar-dtaa': {
         title: 'US Expat & Returnee — IRS Form 1040, FBAR & FATCA',
@@ -2649,42 +2689,78 @@ END:VCALENDAR`;
       docsList.innerHTML = data.docs.map(doc => `<li>${doc}</li>`).join('');
     }
 
-    // Route Estimator Selection to Contact Form
-    function requestConsultationForProfile() {
-      const serviceSelect = document.getElementById('clientService');
-      const req = document.getElementById('requirementSelect').value;
-      
-      if (req === 'itr') serviceSelect.value = 'Income Tax Return Filing (ITR)';
-      else if (req === 'gst-tds') serviceSelect.value = 'GST Registration & Filing';
-      else if (req === 'audit-roc') serviceSelect.value = 'Tax Audit (3CD) & Statutory Audit';
-      else if (req === 'fbar-dtaa') serviceSelect.value = 'US & Cross-Border Taxation';
-
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-      document.getElementById('clientName').focus();
+    function openWhatsAppURL(waUrl) {
+      const newWin = window.open(waUrl, '_blank');
+      if (!newWin || newWin.closed || typeof newWin.closed == 'undefined') {
+        window.location.href = waUrl;
+      }
     }
 
-    // 5. Safe Form Submission Handler with Guaranteed Open Links
-    function handleConsultationSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('clientName').value;
-      const phone = document.getElementById('clientPhone').value;
-      const service = document.getElementById('clientService').value;
-      const message = document.getElementById('clientMessage').value;
+    // Route Estimator Selection to Contact Form & WhatsApp
+    function requestConsultationForProfile() {
+      const profileSel = document.getElementById('profileSelect');
+      const reqSel = document.getElementById('requirementSelect');
+      const profileText = profileSel ? profileSel.options[profileSel.selectedIndex].text : '';
+      const reqText = reqSel ? reqSel.options[reqSel.selectedIndex].text : '';
 
-      const waText = `Hello CA Dinesh,%0A%0AI would like to schedule a consultation.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Service Required:* ${encodeURIComponent(service)}%0A*Notes:* ${encodeURIComponent(message)}`;
+      const waText = `Hello CA Dinesh,%0A%0AI am reaching out regarding a tax consultation for my profile.%0A%0A*Profile:* ${encodeURIComponent(profileText)}%0A*Requirement:* ${encodeURIComponent(reqText)}`;
       const waUrl = `https://wa.me/919071059696?text=${waText}`;
 
-      const emailSubj = `Consultation / Callback Request - ${encodeURIComponent(name)}`;
-      const emailBody = `Hello CA Dinesh,%0A%0AI would like to request a consultation / callback.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0ADetails: ${encodeURIComponent(message)}`;
+      const serviceSelect = document.getElementById('clientService');
+      const req = reqSel ? reqSel.value : '';
+      if (serviceSelect && req) {
+        if (req === 'itr') serviceSelect.value = 'Income Tax Return Filing (ITR)';
+        else if (req === 'gst-tds') serviceSelect.value = 'GST Registration & Filing';
+        else if (req === 'audit-roc') serviceSelect.value = 'Tax Audit (3CD) & Statutory Audit';
+        else if (req === 'fbar-dtaa') serviceSelect.value = 'US & Cross-Border Taxation';
+      }
+
+      openWhatsAppURL(waUrl);
+    }
+
+    function redirectCalcToWhatsApp() {
+      const inc = document.getElementById('calcIncome').value;
+      const ded = document.getElementById('calcDeduction').value;
+      const waText = `Hello CA Dinesh,%0A%0AI used the Tax Calculator on your website (Gross Income: ₹${inc}, Deductions: ₹${ded}).%0A%0AI would like personal tax optimization advice for FY 2024-25.`;
+      const waUrl = `https://wa.me/919071059696?text=${waText}`;
+      openWhatsAppURL(waUrl);
+    }
+
+    // Direct WhatsApp Consultation Handler
+    function handleConsultationSubmit(e) {
+      if (e) e.preventDefault();
+      const nameEl = document.getElementById('clientName');
+      const phoneEl = document.getElementById('clientPhone');
+      const serviceEl = document.getElementById('clientService');
+      const msgEl = document.getElementById('clientMessage');
+
+      const name = nameEl ? nameEl.value.trim() : '';
+      const phone = phoneEl ? phoneEl.value.trim() : '';
+      const service = serviceEl ? serviceEl.value : 'General Tax Consultation';
+      const message = msgEl ? msgEl.value.trim() : '';
+
+      let waText = `Hello CA Dinesh,%0A%0AI would like to schedule a consultation with J Dinesh & Co.`;
+      if (name || phone || message) {
+        waText += `%0A%0A*Name:* ${encodeURIComponent(name || 'Client')}%0A*Phone:* ${encodeURIComponent(phone || 'Not provided')}%0A*Service Required:* ${encodeURIComponent(service)}`;
+        if (message) waText += `%0A*Notes:* ${encodeURIComponent(message)}`;
+      } else {
+        waText += `%0A%0A*Service Required:* ${encodeURIComponent(service)}`;
+      }
+
+      const waUrl = `https://wa.me/919071059696?text=${waText}`;
+      const emailSubj = `Consultation / Callback Request - ${encodeURIComponent(name || 'Client')}`;
+      const emailBody = `Hello CA Dinesh,%0A%0AI would like to request a consultation / callback.%0A%0AName: ${encodeURIComponent(name || 'Client')}%0APhone: ${encodeURIComponent(phone || 'Not provided')}%0AService: ${encodeURIComponent(service)}%0ADetails: ${encodeURIComponent(message)}`;
       const emailUrl = `mailto:cadineshjagarlamudi@gmail.com?subject=${emailSubj}&body=${emailBody}`;
 
-      document.getElementById('toastWaLink').setAttribute('href', waUrl);
-      document.getElementById('toastEmailLink').setAttribute('href', emailUrl);
+      const toastWa = document.getElementById('toastWaLink');
+      const toastEmail = document.getElementById('toastEmailLink');
+      if (toastWa) toastWa.setAttribute('href', waUrl);
+      if (toastEmail) toastEmail.setAttribute('href', emailUrl);
 
       const toast = document.getElementById('toastModal');
-      toast.style.display = 'block';
+      if (toast) toast.style.display = 'block';
 
-      window.location.href = waUrl;
+      openWhatsAppURL(waUrl);
     }
 
     // Service Filter Function
@@ -2738,6 +2814,12 @@ END:VCALENDAR`;
         });
       });
     });
+
+    // Immediate invocation fallback
+    try {
+      if (typeof calculateTax === 'function') calculateTax();
+      if (typeof updateEstimator === 'function') updateEstimator();
+    } catch (e) {}
   </script>
 </body>
 </html>
