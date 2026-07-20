@@ -64,7 +64,9 @@
       --max-width: 1240px;
     }
 
-    [data-theme="dark"] {
+    [data-theme="dark"],
+    html[data-theme="dark"],
+    body[data-theme="dark"] {
       --bg-main: #07090E;
       --bg-surface: #0F172A;
       --bg-card: #0F172A;
@@ -1499,6 +1501,42 @@
     }
   </style>
 
+  <!-- Global Theme Engine - Instant Initialization -->
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (document.body) document.body.setAttribute('data-theme', theme);
+      try {
+        localStorage.setItem('ca_theme', theme);
+      } catch (e) {}
+
+      const icon = document.getElementById('themeIcon');
+      if (icon) {
+        if (theme === 'dark') {
+          // Sun icon for switching back to light mode
+          icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+        } else {
+          // Moon icon for switching to dark mode
+          icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>';
+        }
+      }
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = (current === 'light') ? 'dark' : 'light';
+      setTheme(next);
+    }
+
+    // Apply saved theme immediately before render
+    (function() {
+      try {
+        var saved = localStorage.getItem('ca_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+      } catch(e) {}
+    })();
+  </script>
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -1881,7 +1919,7 @@
               <div class="calendar-badge-icon">🗓️</div>
               <div>
                 <h3 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--text-main)">Quarterly Advance Tax Schedule (u/s 208/211)</h3>
-                <p style="font-size:0.8rem;color:var(--text-muted)">Includes 1-Month, 15-Day &amp; 5-Day Prior Auto-Reminders for 50 Years</p>
+                <p style="font-size:0.8rem;color:var(--text-muted)">Includes 1-Month, 15-Day &amp; 5-Day Prior Auto-Reminders for 10 Years</p>
               </div>
             </div>
 
@@ -1925,7 +1963,7 @@
               <div class="calendar-badge-icon">📊</div>
               <div>
                 <h3 style="font-family:var(--font-heading);font-size:1.25rem;font-weight:700;color:var(--text-main)">Monthly GST, TDS &amp; Annual Deadlines</h3>
-                <p style="font-size:0.8rem;color:var(--text-muted)">Includes 1-Month, 15-Day &amp; 5-Day Prior Auto-Reminders for 50 Years</p>
+                <p style="font-size:0.8rem;color:var(--text-muted)">Includes 1-Month, 15-Day &amp; 5-Day Prior Auto-Reminders for 10 Years</p>
               </div>
             </div>
 
@@ -1963,15 +2001,15 @@
         </div>
       </div>
 
-      <!-- Real 50-Year Recurring .ICS Calendar Download Card -->
+      <!-- Real 10-Year Recurring .ICS Calendar Download Card -->
       <div class="cta-banner-card">
         <div class="cta-banner-content">
-          <h3>Add 50-Year Tax Due Date Reminders to Your Device Calendar</h3>
-          <p>Download our official Tax &amp; GST Compliance Calendar (.ics file). Automatically sets **1 Month Prior, 15 Days Prior, and 5 Days Prior** popup notifications for every tax deadline, recurring every year for the next 50 years on Google Calendar, Apple Calendar, or Outlook!</p>
+          <h3>Set-up Tax Calendar Reminders on Your Device</h3>
+          <p>Download our official Tax &amp; GST Compliance Calendar (.ics file). Automatically sets **1 Month Prior, 15 Days Prior, and 5 Days Prior** popup notifications for every tax deadline, recurring every year for the next 10 years on Google Calendar, Apple Calendar, or Outlook!</p>
         </div>
         <div style="display:flex;gap:1rem;flex-wrap:wrap">
           <button onclick="downloadTaxCalendarICS()" class="btn-radial-glow" style="background:linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);color:#FFF;border:none">
-            📅 Download 50-Yr Tax Calendar (.ics)
+            📅 Set-up tax calendar reminders on your device
           </button>
           <button onclick="window.print()" class="btn-secondary-shine" style="background:rgba(255,255,255,0.15);color:#FFF;border-color:rgba(255,255,255,0.3)">
             🖨️ Print Due Dates Schedule
@@ -2352,29 +2390,15 @@
        JAVASCRIPT SCRIPTS
        ══════════════════════════════════════════════════════════════ */
   <script>
-    // 1. Theme Switcher Logic
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      document.body.setAttribute('data-theme', theme);
-      localStorage.setItem('ca_theme', theme);
+    // Theme state sync on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        var saved = localStorage.getItem('ca_theme') || 'light';
+        setTheme(saved);
+      } catch (e) {}
+    });
 
-      const icon = document.getElementById('themeIcon');
-      if (icon) {
-        if (theme === 'dark') {
-          icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>';
-        } else {
-          icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
-        }
-      }
-    }
-
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      const next = current === 'light' ? 'dark' : 'light';
-      setTheme(next);
-    }
-
-    // 2. Real .ICS Calendar Generator with 1-Month, 15-Day & 5-Day Alarms for 50 Years
+    // 2. Real .ICS Calendar Generator with 1-Month, 15-Day & 5-Day Alarms for 10 Years
     function downloadTaxCalendarICS() {
       const icsData = `BEGIN:VCALENDAR
 VERSION:2.0
@@ -2386,7 +2410,7 @@ SUMMARY:Q1 Advance Tax Due (15%) - J Dinesh & Co
 DESCRIPTION:Pay at least 15% of estimated net income tax liability for FY.
 DTSTART;VALUE=DATE:20240615
 DTEND;VALUE=DATE:20240616
-RRULE:FREQ=YEARLY;COUNT=50
+RRULE:FREQ=YEARLY;COUNT=10
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Reminder: Q1 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
@@ -2409,7 +2433,7 @@ SUMMARY:Q2 Advance Tax Due (45%) - J Dinesh & Co
 DESCRIPTION:Pay cumulative 45% of total estimated tax liability.
 DTSTART;VALUE=DATE:20240915
 DTEND;VALUE=DATE:20240916
-RRULE:FREQ=YEARLY;COUNT=50
+RRULE:FREQ=YEARLY;COUNT=10
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Reminder: Q2 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
@@ -2432,7 +2456,7 @@ SUMMARY:Q3 Advance Tax Due (75%) - J Dinesh & Co
 DESCRIPTION:Pay cumulative 75% of total estimated tax liability.
 DTSTART;VALUE=DATE:20241215
 DTEND;VALUE=DATE:20241216
-RRULE:FREQ=YEARLY;COUNT=50
+RRULE:FREQ=YEARLY;COUNT=10
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Reminder: Q3 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
@@ -2455,7 +2479,7 @@ SUMMARY:Q4 Advance Tax Due (100%) - J Dinesh & Co
 DESCRIPTION:Pay 100% of estimated tax before fiscal year close.
 DTSTART;VALUE=DATE:20250315
 DTEND;VALUE=DATE:20250316
-RRULE:FREQ=YEARLY;COUNT=50
+RRULE:FREQ=YEARLY;COUNT=10
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Reminder: Q4 Advance Tax Due in 1 Month! Contact CA Dinesh (+91 9071059696).
@@ -2478,7 +2502,7 @@ SUMMARY:Annual ITR Filing Deadline (Non-Audit) - J Dinesh & Co
 DESCRIPTION:Income Tax Return filing deadline for salaried individuals and non-audit businesses.
 DTSTART;VALUE=DATE:20250731
 DTEND;VALUE=DATE:20250801
-RRULE:FREQ=YEARLY;COUNT=50
+RRULE:FREQ=YEARLY;COUNT=10
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Reminder: Annual ITR Filing Due in 1 Month! Contact CA Dinesh (+91 9071059696).
@@ -2501,7 +2525,7 @@ SUMMARY:Tax Audit (3CD) & Business ITR Deadline - J Dinesh & Co
 DESCRIPTION:Tax audit report and corporate return filing deadline under Sec 44AB.
 DTSTART;VALUE=DATE:20251031
 DTEND;VALUE=DATE:20251101
-RRULE:FREQ=YEARLY;COUNT=50
+RRULE:FREQ=YEARLY;COUNT=10
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Reminder: Tax Audit & Business ITR Due in 1 Month! Contact CA Dinesh (+91 9071059696).
