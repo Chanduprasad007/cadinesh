@@ -1477,27 +1477,363 @@
       color: rgba(255, 255, 255, 0.6);
     }
 
-    /* Mobile Responsive */
+    /* ══════════════════════════════════════════════════════════════
+       MOBILE NAVIGATION DRAWER & BUTTONS
+       ══════════════════════════════════════════════════════════════ */
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-main);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-btn:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg-nav);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 99;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-12px);
+      transition: opacity 0.28s ease, transform 0.28s ease;
+      overflow-y: auto;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .mobile-drawer.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .mobile-drawer-inner {
+      padding: 1.25rem 1.25rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding: 0.85rem 1.15rem;
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .mobile-nav-link:active,
+    .mobile-nav-link:hover {
+      background: rgba(2, 132, 199, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateX(4px);
+    }
+
+    .mobile-nav-icon {
+      font-size: 1.2rem;
+      width: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-drawer-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .mobile-quick-contacts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+
+    .mobile-quick-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.75rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text-main);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+    }
+
+    .mobile-quick-btn:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       COMPREHENSIVE MOBILE RESPONSIVE QUERIES
+       ══════════════════════════════════════════════════════════════ */
     @media (max-width: 992px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .bento-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-grid { grid-template-columns: repeat(2, 1fr); }
-      .audit-grid { grid-template-columns: repeat(2, 1fr); }
-      .calendar-grid { grid-template-columns: 1fr; }
-      .calc-grid { grid-template-columns: 1fr; }
-      .estimator-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.75rem; }
+      .bento-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .audit-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .calendar-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+      .calc-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .estimator-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 860px) {
+      .spotlight-nav { display: none; }
+      .mobile-menu-btn { display: flex; }
     }
 
     @media (max-width: 640px) {
-      .top-bar-inner { flex-direction: column; align-items: flex-start; }
-      .bento-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .audit-grid { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: repeat(2, 1fr); }
-      .spotlight-nav { display: none; }
-      .floating-wa-btn span { display: none; }
-      .floating-wa-btn { padding: 0.8rem; }
+      /* General layout & typography */
+      .container { padding: 0 1.15rem; }
+      section { padding: 3.25rem 0; }
+      
+      /* Top Bar */
+      .top-bar { padding: 0.45rem 0; }
+      .top-bar-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.45rem;
+      }
+      .top-bar-tags {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+      .badge-pill { font-size: 0.68rem; padding: 0.18rem 0.55rem; }
+      .top-bar-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.65rem 1rem;
+        font-size: 0.76rem;
+      }
+
+      /* Header */
+      .header-inner { height: 64px; }
+      .brand-icon { width: 38px; height: 38px; }
+      .brand-icon svg { width: 20px; height: 20px; }
+      .brand-name { font-size: 1.18rem; }
+      .brand-sub { font-size: 0.62rem; letter-spacing: 0.12em; }
+      .header-cta-btn { display: none; }
+
+      /* Hero Section */
+      .hero-section { padding: 2rem 0 2.5rem; }
+      .hero-kicker { font-size: 0.72rem; padding: 0.3rem 0.75rem; margin-bottom: 1.15rem; }
+      h1.hero-title {
+        font-size: clamp(1.85rem, 7.8vw, 2.5rem);
+        line-height: 1.18;
+        margin-bottom: 1rem;
+      }
+      .hero-desc {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 1.5rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+      }
+      .hero-actions .btn-radial-glow,
+      .hero-actions .btn-email-direct {
+        width: 100%;
+        min-height: 48px;
+        font-size: 0.92rem;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Hero Stats Cards */
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        padding-top: 1.5rem;
+      }
+      .stat-item {
+        background: var(--bg-card);
+        border: 1px solid var(--border-card);
+        border-radius: var(--radius-md);
+        padding: 0.85rem 0.75rem;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+      }
+      .stat-value { font-size: 1.45rem; }
+      .stat-label { font-size: 0.68rem; margin-top: 0.25rem; }
+
+      /* Profile Hero Card */
+      .hero-card { padding: 1.35rem; }
+      .card-profile-header { gap: 0.9rem; }
+      .profile-avatar { width: 68px; height: 68px; }
+      .profile-name { font-size: 1.15rem; }
+      .profile-title { font-size: 0.76rem; }
+      .profile-status { font-size: 0.68rem; }
+      .info-row { gap: 0.65rem; }
+      .info-val { font-size: 0.82rem; word-break: break-word; }
+      .card-actions-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+      .card-btn { min-height: 42px; font-size: 0.8rem; }
+
+      /* Section Titles */
+      .sec-kicker { font-size: 0.72rem; }
+      h2.sec-title {
+        font-size: clamp(1.6rem, 6.2vw, 2.15rem);
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      .sec-desc { font-size: 0.92rem; line-height: 1.65; }
+
+      /* Services Bento & Filter Chips */
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+      }
+      .filter-tabs {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding: 0.35rem;
+        gap: 0.4rem;
+        scrollbar-width: none;
+      }
+      .filter-tabs::-webkit-scrollbar { display: none; }
+      .filter-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+        padding: 0.45rem 0.9rem;
+        font-size: 0.78rem;
+      }
+      .bento-grid { grid-template-columns: 1fr; gap: 1.15rem; }
+      .glow-card { padding: 1.5rem 1.25rem; }
+      .svc-card-title { font-size: 1.15rem; }
+
+      /* Audit Section */
+      .audit-grid { grid-template-columns: 1fr; gap: 1.15rem; margin-top: 1.75rem; }
+      .audit-card { padding: 1.5rem 1.25rem; }
+
+      /* Compliance Calendar */
+      .calendar-card { padding: 1.5rem 1.25rem; }
+      .calendar-badge-icon { width: 38px; height: 38px; font-size: 1.15rem; }
+      .due-date-item { padding: 0.75rem; gap: 0.75rem; }
+      .date-tag { font-size: 0.75rem; padding: 0.25rem 0.5rem; }
+      .date-title { font-size: 0.88rem; }
+      .date-sub { font-size: 0.76rem; }
+      .cta-banner-card {
+        padding: 1.75rem 1.25rem;
+        margin-top: 2rem;
+        text-align: center;
+        justify-content: center;
+      }
+      .cta-banner-content h3 { font-size: 1.35rem; }
+      .cta-banner-content p { font-size: 0.88rem; }
+      .cta-banner-card button { width: 100%; min-height: 48px; justify-content: center; }
+
+      /* US Taxation 2-grid */
+      #us-taxation div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem !important;
+      }
+
+      /* Tax Calculator */
+      .calc-box { padding: 1.5rem 1.25rem; margin-top: 1.75rem; }
+      .calc-results-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+      .calc-res-card { padding: 1rem 0.6rem; }
+      .calc-res-val { font-size: 1.25rem; }
+      .calc-box button { min-height: 48px; font-size: 0.9rem; }
+
+      /* Estimator & Document Checklist */
+      .estimator-card { padding: 1.5rem 1.25rem; }
+      .estimator-result-box { padding: 1.25rem 1rem; }
+      .res-title { font-size: 1.05rem; }
+      .estimator-card button { min-height: 48px; font-size: 0.9rem; }
+
+      /* Form inputs - 16px to stop iOS Safari auto-zoom */
+      .form-input, .form-select {
+        font-size: 16px !important;
+        min-height: 48px;
+        padding: 0.75rem 1rem;
+      }
+
+      /* Why Choose Us */
+      .why-grid { grid-template-columns: 1fr; gap: 1.15rem; margin-top: 1.75rem; }
+      .why-card { padding: 1.5rem 1.25rem; }
+
+      /* FAQ Accordion */
+      summary.faq-summary { padding: 1rem 1.15rem; font-size: 0.95rem; }
+      .faq-answer { padding: 0 1.15rem 1rem; font-size: 0.88rem; }
+
+      /* Contact Form */
+      .contact-form-card { padding: 1.5rem 1.25rem; }
+      .contact-form-card button { min-height: 50px; font-size: 0.98rem; }
+
+      /* Toast Notification Modal */
+      .toast-modal {
+        left: 1rem;
+        right: 1rem;
+        bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+        max-width: calc(100% - 2rem);
+        padding: 1.25rem;
+      }
+
+      /* Sticky Floating WhatsApp Badge */
+      .floating-wa-btn {
+        bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+        left: 1rem;
+        padding: 0.65rem 1rem;
+        font-size: 0.82rem;
+      }
+      .floating-wa-btn span { display: inline-block; }
+
+      /* Footer */
+      footer { padding: 3rem 0 calc(2rem + env(safe-area-inset-bottom, 0px)); }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
     }
   </style>
 
@@ -1621,12 +1957,65 @@
         </ul>
       </nav>
 
-      <div style="display:flex;align-items:center;gap:0.75rem">
+      <div style="display:flex;align-items:center;gap:0.6rem">
         <!-- Robust Light / Dark Mode Toggle Button -->
         <button id="themeBtn" class="theme-toggle-btn" onclick="toggleTheme()" title="Switch Light/Dark Mode" aria-label="Toggle Theme">
           <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         </button>
-        <button type="button" onclick="handleConsultationSubmit(event)" class="btn-radial-glow">Book Consultation</button>
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="hamburger-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg class="close-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <button type="button" onclick="handleConsultationSubmit(event)" class="btn-radial-glow header-cta-btn">Book Consultation</button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div id="mobileMenu" class="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-inner">
+        <div class="mobile-nav-links">
+          <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span class="mobile-nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="#services" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span class="mobile-nav-icon">📋</span>
+            <span>Tax &amp; GST Services</span>
+          </a>
+          <a href="#audit" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span class="mobile-nav-icon">🏢</span>
+            <span>Audit &amp; Corporate</span>
+          </a>
+          <a href="#calendar-due-dates" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span class="mobile-nav-icon">📅</span>
+            <span>Compliance Calendar</span>
+          </a>
+          <a href="#calculator" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span class="mobile-nav-icon">🧮</span>
+            <span>Tax Calculator</span>
+          </a>
+          <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">
+            <span class="mobile-nav-icon">✉️</span>
+            <span>Contact CA Dinesh</span>
+          </a>
+        </div>
+
+        <div class="mobile-drawer-footer">
+          <button type="button" onclick="closeMobileMenu(); handleConsultationSubmit(event);" class="btn-radial-glow" style="width:100%; justify-content:center; min-height:48px;">
+            💬 Instant WhatsApp Consultation
+          </button>
+          <div class="mobile-quick-contacts">
+            <a href="tel:+919071059696" class="mobile-quick-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .12h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              +91 90710 59696
+            </a>
+            <a href="mailto:cadineshjagarlamudi@gmail.com" class="mobile-quick-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email CA
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -2840,6 +3229,45 @@ END:VCALENDAR`;
           card.style.setProperty('--mouse-y', `${y}px`);
         });
       });
+    });
+
+    // Mobile Navigation Drawer Toggle Handlers
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (!menu || !btn) return;
+      const isOpen = menu.classList.toggle('active');
+      btn.setAttribute('aria-expanded', isOpen);
+      const ham = btn.querySelector('.hamburger-icon');
+      const cls = btn.querySelector('.close-icon');
+      if (ham && cls) {
+        ham.style.display = isOpen ? 'none' : 'block';
+        cls.style.display = isOpen ? 'block' : 'none';
+      }
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      if (menu && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          const ham = btn.querySelector('.hamburger-icon');
+          const cls = btn.querySelector('.close-icon');
+          if (ham && cls) {
+            ham.style.display = 'block';
+            cls.style.display = 'none';
+          }
+        }
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close mobile menu on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
     });
 
     // Immediate invocation fallback
